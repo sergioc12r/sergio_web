@@ -11,7 +11,7 @@ class Footer extends StatelessWidget {
     return LayoutBuilder(builder: (context,constraints){
       return Container(
         width: constraints.maxWidth,
-        color: Colors.blueAccent,
+        color: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
