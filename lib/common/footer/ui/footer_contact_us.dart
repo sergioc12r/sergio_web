@@ -9,7 +9,7 @@ class FooterContactUs extends StatelessWidget {
       children: [
         Text('Contact me:'),
         /// TODO add launch url with email curl
-        Text('Send me an email: sergio951112@gmail.com')
+        Text('sergio951112@gmail.com')
       ],
     );
   }
