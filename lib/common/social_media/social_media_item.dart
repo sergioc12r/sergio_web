@@ -20,7 +20,7 @@ class SocialMediaItem extends StatelessWidget {
       },
       child: SvgPicture.asset(
         path,
-        colorFilter: ColorFilter.mode(color ?? Colors.white, BlendMode.srcIn),
+        colorFilter: ColorFilter.mode(color ?? Colors.black, BlendMode.srcIn),
         height: size ?? 30,
         width: size ?? 30,
       ),
