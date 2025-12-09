@@ -6,6 +6,7 @@ class FooterContactUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('Contact me:'),
         /// TODO add launch url with email curl
