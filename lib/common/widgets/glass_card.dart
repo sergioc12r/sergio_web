@@ -1,4 +1,4 @@
-import 'dart:ui'; // Necesario para el BackdropFilter
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class GlassCard extends StatelessWidget {
@@ -12,13 +12,13 @@ class GlassCard extends StatelessWidget {
     required this.child,
     this.blurAmount = 20.0,
     this.elevation = 4.0,
-    this.overlayColor = const Color.fromRGBO(255, 255, 255, 0.2),
+    this.overlayColor = const Color.fromRGBO(255, 255, 255, 0.2), // Ligeramente más opaco
   });
 
   @override
   Widget build(BuildContext context) {
-    final double shadowBlurRadius = elevation * 1.5;
-    final Offset shadowOffset = Offset(0, elevation * 0.8);
+    // Si necesitas BoxShadow, la colocamos aquí.
+    const double shadowBlurRadius = 15.0;
 
     return ClipRRect(
       borderRadius: BorderRadius.circular(20.0),
@@ -38,9 +38,14 @@ class GlassCard extends StatelessWidget {
 
             boxShadow: [
               BoxShadow(
-                color: Colors.grey.withOpacity(0.1 + (elevation / 100)),
+                color: Colors.black.withOpacity(0.1),
                 blurRadius: shadowBlurRadius,
-                offset: shadowOffset,
+                offset: const Offset(0, 5),
+              ),
+              BoxShadow(
+                color: Colors.white.withOpacity(0.15),
+                blurRadius: 5.0,
+                spreadRadius: -2.0,
               ),
             ],
           ),
