@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:sergio_web/common/footer/ui/footer_location.dart';
-import 'package:sergio_web/common/footer/ui/footer_contact_us.dart';
-import 'package:sergio_web/common/footer/ui/footer_social_media.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/footer/ui/footer_contact_us.dart';
+import 'package:sergio_web/footer/ui/footer_location.dart';
+import 'package:sergio_web/footer/ui/footer_social_media.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
