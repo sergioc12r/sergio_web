@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sergio_web/common/footer/ui/footer_location.dart';
 import 'package:sergio_web/common/footer/ui/footer_contact_us.dart';
 import 'package:sergio_web/common/footer/ui/footer_social_media.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Footer extends StatelessWidget {
   const Footer({super.key});
@@ -9,7 +10,9 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = Theme.of(context).cardColor;
-    return LayoutBuilder(builder: (context,constraints){
+    final strings = AppLocalizations.of(context)!;
+    final style = Theme.of(context).textTheme;
+    return LayoutBuilder(builder: (context, constraints) {
       return Container(
         width: constraints.maxWidth,
         color: color,
@@ -17,19 +20,16 @@ class Footer extends StatelessWidget {
           padding: const EdgeInsets.all(25.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 20,
             children: [
               const SizedBox(height: 20),
-              Text('Desarrollador Flutter'),
-              const SizedBox(height: 20),
+              Text(strings.footer_title, style: style.headlineSmall),
               FooterContactUs(),
-              const SizedBox(height: 20),
               FlutterSocialMedia(),
-              const SizedBox(height: 20),
               FooterLocation(),
-              const SizedBox(height: 20),
               const Divider(),
-              Text('© 2025 By Sergio Caro, Hecho con 💗 y Flutter'),
-              const SizedBox(height: 30),
+              Text(strings.footer_final_text, style: style.bodySmall),
+              const SizedBox(height: 10),
             ],
           ),
         ),
