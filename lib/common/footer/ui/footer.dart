@@ -8,10 +8,11 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final color = Theme.of(context).cardColor;
     return LayoutBuilder(builder: (context,constraints){
       return Container(
         width: constraints.maxWidth,
-        color: Colors.white,
+        color: color,
         child: Padding(
           padding: const EdgeInsets.all(25.0),
           child: Column(
