@@ -3,7 +3,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class SocialMediaItem extends StatelessWidget {
   const SocialMediaItem(
-      {super.key, this.url, this.name, required this.path, this.color, this.size});
+      {super.key,
+      this.url,
+      this.name,
+      required this.path,
+      this.color,
+      this.size});
 
   final String? name;
   final String path;
@@ -13,6 +18,7 @@ class SocialMediaItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final style = Theme.of(context).iconTheme;
     return GestureDetector(
       onTap: () {
         /// TODO add launch URL
@@ -20,7 +26,7 @@ class SocialMediaItem extends StatelessWidget {
       },
       child: SvgPicture.asset(
         path,
-        colorFilter: ColorFilter.mode(color ?? Colors.black, BlendMode.srcIn),
+        colorFilter: ColorFilter.mode(color ?? style.color!, BlendMode.srcIn),
         height: size ?? 30,
         width: size ?? 30,
       ),
