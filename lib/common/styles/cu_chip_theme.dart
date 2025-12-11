@@ -10,7 +10,7 @@ class CUChipTheme{
   );
 
   static ChipThemeData darkChipTheme = ChipThemeData(
-    backgroundColor: CUCardTheme.darkCardTheme.color,
+    backgroundColor: CUCardTheme.darkCardTheme.shadowColor?.withAlpha(80),
     selectedColor: Colors.blue,
     disabledColor: Colors.grey,
   );
