@@ -1,8 +1,43 @@
 {
   "@@locale": "en",
-  "appTitle": "My App",
+  "appTitle": "Serch - Dev",
   "@appTitle": {
     "description": "The title of the application"
   },
-  "greeting": "Hello, world!"
+
+  "email" : "sergio951112@gmail.com",
+  "location" : "Bogotá - Colombia",
+
+  "footer_title" : "Flutter Developer",
+  "footer_final_text" : "© 2025 By Sergio Caro, Made with 💗 and Flutter",
+  "footer_contact_label" : "Contact me: ",
+  "footer_social_title" : "Follow me: ",
+  "footer_location" : "Bogotá, Colombia",
+
+  "experience_title" : "Experience",
+  "experience_subtitle" : "My experience in mobile development",
+  "experience_current" : "Current",
+
+  "education_title" : "Education and Certificates",
+  "education_subtitle" : "Academic education and continuous learning",
+
+  "contact_title" : "Do you have a project?",
+  "contact_sub_title" : "I'm available for freelance projects and collaborations. Let's talk!",
+  "contact_info_title" : "Contact Information",
+  "contact_info_email" : "Email",
+  "contact_info_location" : "Location",
+  "contact_form_title" : "Send me a message",
+  "contact_form_name_label" : "Name *",
+  "contact_form_name_place_holder" : "Your name",
+  "contact_form_email_label" : "Email *",
+  "contact_form_email_place_holder" : "your@email.com *",
+  "contact_form_subject_label" : "Subject *",
+  "contact_form_subject_place_holder" : "How can I help you?",
+  "contact_form_subject_body_label" : "Message *",
+  "contact_form_subject_body_place_holder" : "Tell me about your project ...",
+  "contact_form_send_button_label" : "Send Message",
+  "contact_social_title" : "Follow me on: ",
+  "contact_validator" : "Required field.",
+  "contact_email_validator" : "Invalid email.",
+  "contact_email_empty_validator" : "Required email."
 }
