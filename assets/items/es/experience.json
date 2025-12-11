@@ -1,0 +1,138 @@
+{
+  "data": [
+    {
+      "title": "Flutter Dev Ssr Adv. - Industria Bancaria",
+      "company": "Globant",
+      "description": "Desarrollo y soporte de aplicaciones móviles críticas para la banca, garantizando el cumplimiento de estrictos estándares de seguridad, rendimiento y normativas financieras.",
+      "isCurrent": true,
+      "initDate": "2025-02-01",
+      "endDate": "2025-11-01",
+      "skills": [
+        { "title": "Android Studio" },
+        { "title": "Xcode" },
+        { "title": "Azure Pipeline" },
+        { "title": "Microsoft Suite" },
+        { "title": "GO Router" },
+        { "title": "Packages" }
+      ],
+      "activities": []
+    },
+    {
+      "title": "Flutter Dev Ssr Adv. - Lider de equipo - Empresa de Salud - Latam",
+      "company": "Globant",
+      "description": "Liderazgo técnico del equipo de desarrollo, supervisando la arquitectura e implementación de soluciones Flutter para una importante compañía de salud en Latinoamérica.",
+      "isCurrent": false,
+      "initDate": "2024-01-01",
+      "endDate": "2025-01-01",
+      "skills": [
+        { "title": "Android Studio" },
+        { "title": "CLA Documentation" },
+        { "title": "Firebase Deprecation Alternatives" },
+        { "title": "Xcode" }
+      ],
+      "activities": []
+    },
+    {
+      "title": "Flutter Dev Ssr - Empresa de Salud - Latam",
+      "company": "Globant",
+      "description": "Desarrollo de nuevas características e integración de APIs para la aplicación de salud, enfocándose en la estabilidad y escalabilidad del producto para un alto volumen de usuarios.",
+      "isCurrent": false,
+      "initDate": "2022-12-01",
+      "endDate": "2024-12-01",
+      "skills": [
+        { "title": "MVVM" },
+        { "title": "Provider" },
+        { "title": "Local Auth" },
+        { "title": "Freezed" }
+      ],
+      "activities": []
+    },
+    {
+      "title": "Flutter Dev Ssr - Industria de Transporte - USA",
+      "company": "Globant",
+      "description": "Colaboración en el desarrollo de una aplicación móvil de logística y seguimiento para la industria de transporte en EE. UU., implementando funcionalidades de geolocalización avanzada.",
+      "isCurrent": false,
+      "initDate": "2022-01-01",
+      "endDate": "2022-11-01",
+      "skills": [
+        { "title": "Flutter BLOC" },
+        { "title": "Clean Architecture" },
+        { "title": "GET IT" },
+        { "title": "Unit Testing" },
+        { "title": "AutoRoute" }
+      ],
+      "activities": []
+    },
+    {
+      "title": "Mobile Developer Leader",
+      "company": "Loro (Wishper SAS)",
+      "description": "Liderazgo y dirección del equipo de desarrollo móvil, gestionando el ciclo de vida completo de la aplicación desde la arquitectura hasta el lanzamiento en tiendas.",
+      "isCurrent": false,
+      "initDate": "2020-02-01",
+      "endDate": "2022-11-01",
+      "skills": [
+        { "title": "Flutter BLOC" },
+        { "title": "Null Safety Migration" },
+        { "title": "Xcode" },
+        { "title": "FastLane" },
+        { "title": "Versioning" }
+      ],
+      "activities": [
+        {
+          "body": "Diseño e implementación de planes de optimización de la aplicación según las características del dispositivo y la velocidad de la red, mejorando significativamente la experiencia de usuario."
+        },
+        {
+          "body": "Diseño y desarrollo de un 'Asistente Virtual' interno que sirvió como guía persistente de información relevante, mejorando la retención de usuarios en un 40%."
+        },
+        { "body": "Migración y refactorización del código base a Dart Null Safety para aumentar la robustez y reducir errores en tiempo de ejecución." },
+        { "body": "Establecimiento y gestión de procesos de CI/CD utilizando FastLane para la automatización de la compilación y el despliegue a las tiendas de aplicaciones." },
+        { "body": "Mentoría y entrenamiento técnico a desarrolladores junior y semi-senior en tecnologías Flutter, BLOC y Clean Architecture." }
+      ]
+    },
+    {
+      "title": "Mobile Developer",
+      "company": "Loro (Wishper SAS)",
+      "description": "Desarrollo de funcionalidades principales para la aplicación móvil, asegurando la calidad del código mediante pruebas unitarias e integración continua.",
+      "isCurrent": false,
+      "initDate": "2020-02-01",
+      "endDate": "2019-05-01",
+      "skills": [
+        { "title": "Flutter BLOC" },
+        { "title": "Android Studio" },
+        { "title": "Dart" }
+      ],
+      "activities": []
+    },
+    {
+      "title": "Android Developer",
+      "company": "Azzorti Colombia",
+      "description": "Desarrollo de una aplicación nativa en Android con Java, incluyendo módulos para la generación de reportes y la sincronización de datos fuera de línea.",
+      "isCurrent": false,
+      "initDate": "2018-05-01",
+      "endDate": "2018-08-01",
+      "skills": [
+        { "title": "Java" },
+        { "title": "Android Studio" },
+        { "title": "Generate Pdf" }
+      ],
+      "activities": []
+    },
+    {
+      "title": "Software Intern",
+      "company": "Avantel SAS",
+      "description": "Prácticas de ingeniería enfocadas en el desarrollo de herramientas internas con Python (PYQT) y Java para la automatización de informes técnicos y la mejora de la UI interna.",
+      "isCurrent": false,
+      "initDate": "2017-06-01",
+      "endDate": "2018-02-01",
+      "skills": [
+        { "title": "Python" },
+        { "title": "PYQT" },
+        { "title": "Java" },
+        { "title": "Android Studio" },
+        { "title": "Reports" },
+        { "title": "UI" }
+      ],
+      "activities": []
+    }
+  ]
+}

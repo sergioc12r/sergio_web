@@ -1,0 +1,138 @@
+{
+  "data": [
+    {
+      "title": "Flutter Dev Ssr Adv. - Bank Industry",
+      "company": "Globant",
+      "description": "Lorem ipsum dolor sit amet",
+      "isCurrent": true,
+      "initDate": "2025-02-01",
+      "endDate": "2025-11-01",
+      "skills": [
+        { "title": "Android Studio" },
+        { "title": "Xcode" },
+        { "title": "Azure Pipeline" },
+        { "title": "Microsoft Suite" },
+        { "title": "GO Router" },
+        { "title": "Packages" }
+      ],
+      "activities": []
+    },
+    {
+      "title": "Flutter Dev Ssr Adv. -  Team leader Latam Healthcare Company",
+      "company": "Globant",
+      "description": "Lorem ipsum dolor sit amet",
+      "isCurrent": false,
+      "initDate": "2024-01-01",
+      "endDate": "2025-01-01",
+      "skills": [
+        { "title": "Android Studio" },
+        { "title": "CLA Documentation" },
+        { "title": "Firebase Deprecation Alternatives" },
+        { "title": "Xcode" }
+      ],
+      "activities": []
+    },
+    {
+      "title": "Flutter Dev Ssr - Latam Healthcare Company",
+      "company": "Globant",
+      "description": "Lorem ipsum dolor sit amet",
+      "isCurrent": false,
+      "initDate": "2022-12-01",
+      "endDate": "2024-12-01",
+      "skills": [
+        { "title": "MVVM" },
+        { "title": "Provider" },
+        { "title": "Local Auth" },
+        { "title": "Freezed" }
+      ],
+      "activities": []
+    },
+    {
+      "title": "Flutter Dev Ssr - Truckers Industry",
+      "company": "Globant",
+      "description": "Lorem ipsum dolor sit amet",
+      "isCurrent": false,
+      "initDate": "2022-01-01",
+      "endDate": "2022-11-01",
+      "skills": [
+        { "title": "Flutter BLOC" },
+        { "title": "Clean Architecture" },
+        { "title": "GET IT" },
+        { "title": "Unit Testing" },
+        { "title": "AutoRoute" }
+      ],
+      "activities": []
+    },
+    {
+      "title": "Mobile Developer Leader",
+      "company": "Loro (Wishper SAS)",
+      "description": "Lorem ipsum dolor sit amet",
+      "isCurrent": false,
+      "initDate": "2020-02-01",
+      "endDate": "2022-11-01",
+      "skills": [
+        { "title": "Flutter BLOC" },
+        { "title": "Null Safety Migration" },
+        { "title": "Xcode" },
+        { "title": "FastLane" },
+        { "title": "Versioning" }
+      ],
+      "activities": [
+        {
+          "body": "Design and execute optimization plans by device to improve user experience. The app reads device characteristics and network speed for segmenting the smartphone into three categories and optimizing various aspects for a fast experience."
+        },
+        {
+          "body": "Design and develop an internal “Pet Assistant”, this is a persistent assistant with all relevant sections information and a funny and curious chapter of jokes. This one improved user retention by 40%."
+        },
+        { "body": "Lorem ipsum dolor sit amet" },
+        { "body": "Lorem ipsum dolor sit amet" },
+        { "body": "Lorem ipsum dolor sit amet" }
+      ]
+    },
+    {
+      "title": "Mobile Developer",
+      "company": "Loro (Wishper SAS)",
+      "description": "Lorem ipsum dolor sit amet",
+      "isCurrent": false,
+      "initDate": "2020-02-01",
+      "endDate": "2019-05-01",
+      "skills": [
+        { "title": "Flutter BLOC" },
+        { "title": "Android Studio" },
+        { "title": "Dart" }
+      ],
+      "activities": []
+    },
+    {
+      "title": "Android Developer",
+      "company": "Azzorti Colombia",
+      "description": "",
+      "isCurrent": false,
+      "initDate": "2018-05-01",
+      "endDate": "2018-08-01",
+      "skills": [
+        { "title": "Java" },
+        { "title": "Android Studio" },
+        { "title": "Generate Pdf" }
+      ],
+      "activities": []
+    },
+    {
+      "title": "Software Intern",
+      "company": "Avantel SAS",
+      "description": "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet",
+      "isCurrent": false,
+      "initDate": "2017-06-01",
+      "endDate": "2018-02-01",
+      "skills": [
+        { "title": "Python" },
+        { "title": "PYQT" },
+        { "title": "Java" },
+        { "title": "Android Studio" },
+        { "title": "Reports" },
+        { "title": "UI" }
+      ],
+      "activities": []
+    }
+  ]
+}
