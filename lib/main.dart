@@ -13,7 +13,7 @@ void main() async{
   /// Init RiverPod container
   final container = ProviderContainer();
   /// Launch initialize notifier
-  await container.read(appConfigProvider.notifier).initializeData(currentLocale);
+  container.read(appConfigProvider.notifier).initializeData(currentLocale);
   /// Run app
   runApp(UncontrolledProviderScope(container: container, child: const MyApp()));
 }
