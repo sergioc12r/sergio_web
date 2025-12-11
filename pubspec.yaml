@@ -35,6 +35,9 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_svg: 2.2.0
+  flutter_riverpod: 2.6.1
+  lottie: 3.2.0
+
   flutter_localizations:
     sdk: flutter
 
@@ -63,9 +66,10 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-
   assets:
     - assets/icons/
+    - assets/items/en/
+    - assets/items/es/
 
   fonts:
     - family: Roboto
