@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "title": "Mechatronics Engineer",
+      "place": "Universidad Piloto de Colombia",
+      "description": "",
+      "education_type": "degree",
+      "finish_year": "2024-01-01"
+    },
+    {
+      "title": "Django Rest Framework Course",
+      "place": "Platzi",
+      "description": "",
+      "education_type": "shortCourse",
+      "finish_year": "2025-01-01"
+    },
+    {
+      "title": "Cross-Platform Development Path with Flutter",
+      "place": "Platzi",
+      "description": "",
+      "education_type": "shortCourse",
+      "finish_year": "2025-01-01"
+    },
+    {
+      "title": "Advanced Flutter Course",
+      "place": "Platzi",
+      "description": "",
+      "education_type": "shortCourse",
+      "finish_year": "2025-01-01"
+    },
+    {
+      "title": "Professional GIT and GITHUB Course",
+      "place": "Platzi",
+      "description": "",
+      "education_type": "shortCourse",
+      "finish_year": "2024-01-01"
+    },
+    {
+      "title": "Scrum Course",
+      "place": "Platzi",
+      "description": "",
+      "education_type": "shortCourse",
+      "finish_year": "2024-01-01"
+    },
+    {
+      "title": "Mobile Interface Design",
+      "place": "Platzi",
+      "description": "",
+      "education_type": "shortCourse",
+      "finish_year": "2023-01-01"
+    }
+  ]
+}
