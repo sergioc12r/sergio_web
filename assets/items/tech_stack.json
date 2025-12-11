@@ -1,0 +1,80 @@
+{
+  "data": [
+    {
+      "name": "Flutter",
+      "icon_url": "https://api.iconify.design/logos/flutter.svg"
+    },
+    {
+      "name": "Dart",
+      "icon_url": "https://api.iconify.design/logos/dart.svg"
+    },
+    {
+      "name": "Android",
+      "icon_url": "https://api.iconify.design/logos/android-icon.svg"
+    },
+    {
+      "name": "iOS",
+      "icon_url": "https://api.iconify.design/logos/apple.svg"
+    },
+    {
+      "name": "Firebase",
+      "icon_url": "https://api.iconify.design/logos/firebase.svg"
+    },
+    {
+      "name": "Rest API",
+      "icon_url": "https://api.iconify.design/ic/sharp-api.svg"
+    },
+    {
+      "name": "Android Studio",
+      "icon_url": "https://api.iconify.design/devicon/androidstudio.svg"
+    },
+    {
+      "name": "XCode",
+      "icon_url": "https://api.iconify.design/logos/xcode.svg"
+    },
+    {
+      "name": "Git",
+      "icon_url": "https://api.iconify.design/logos/git-icon.svg"
+    },
+    {
+      "name": "Flutter BLOC",
+      "icon_url": "https://api.iconify.design/material-icon-theme/3d.svg"
+    },
+    {
+      "name": "Figma",
+      "icon_url": "https://api.iconify.design/logos/figma.svg"
+    },
+    {
+      "name": "Provider",
+      "icon_url": "https://api.iconify.design/logos/flutter.svg"
+    },
+    {
+      "name": "GetX",
+      "icon_url": "https://api.iconify.design/logos/dart.svg"
+    },
+    {
+      "name": "Azure Pipelines",
+      "icon_url": "https://api.iconify.design/material-icon-theme/azure-pipelines.svg"
+    },
+    {
+      "name": "CI/CD",
+      "icon_url": "https://api.iconify.design/la/cloud-upload-alt.svg"
+    },
+    {
+      "name": "Clean Architecture",
+      "icon_url": "https://api.iconify.design/material-icon-theme/folder-archive.svg"
+    },
+    {
+      "name": "Null safety",
+      "icon_url": "https://api.iconify.design/mdi/safety-goggles.svg"
+    },
+    {
+      "name": "Kotlin",
+      "icon_url": "https://api.iconify.design/logos/kotlin-icon.svg"
+    },
+    {
+      "name": "Java",
+      "icon_url": "https://api.iconify.design/logos/java.svg"
+    }
+  ]
+}
