@@ -22,4 +22,9 @@ class DataResources {
       return _enExperience;
     }
   }
+
+  /// Tech stack data
+  static const String _techStack = "assets/items/tech_stack.json";
+
+  static String getTechStack() => _techStack;
 }
