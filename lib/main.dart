@@ -36,7 +36,7 @@ class MyApp extends ConsumerWidget {
       ],
       supportedLocales: AppLocalizations.supportedLocales,
       ///TODO manage theme later
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.system,
       theme: CUThemeData.lightTheme,
       darkTheme: CUThemeData.darkTheme,
       home: isInitialized ? const HomeScreen() : const CULoading(),
