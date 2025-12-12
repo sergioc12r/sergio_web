@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:sergio_web/common/utils/url_luncher_module.dart';
+import 'package:sergio_web/common/widgets/cu_transparent_button.dart';
 
 class SocialMediaItem extends StatelessWidget {
   const SocialMediaItem(
@@ -19,17 +21,17 @@ class SocialMediaItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final style = Theme.of(context).iconTheme;
-    return GestureDetector(
-      onTap: () {
-        /// TODO add launch URL
-        //launchUrl(Uri.parse(url!));
-      },
-      child: SvgPicture.asset(
-        path,
-        colorFilter: ColorFilter.mode(color ?? style.color!, BlendMode.srcIn),
-        height: size ?? 30,
-        width: size ?? 30,
-      ),
-    );
+
+    return CUTransparentButton(
+        onTap: () {
+          if (url == null) return;
+          UrlLauncherModule.launchSimpleUrl(url!);
+        },
+        child: SvgPicture.asset(
+          path,
+          colorFilter: ColorFilter.mode(color ?? style.color!, BlendMode.srcIn),
+          height: size ?? 30,
+          width: size ?? 30,
+        ));
   }
 }
