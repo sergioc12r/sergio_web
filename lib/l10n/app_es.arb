@@ -9,6 +9,15 @@
   "location" : "Bogotá - Colombia",
   "copy_clipboard_message" : "Copiado al portapapeles",
 
+  "profile_experience_title" : "+6",
+  "profile_experience_subtitle" : "Años de experiencia",
+  "profile_availability" : "Disponible para proyectos",
+  "profile_title_one" : "Hola, soy ",
+  "profile_title_two" : "Sergio Caro",
+  "profile_subtitle" : "Flutter Dev & Ingeniero Mecatrónico",
+  "profile_description" : "",
+  "profile_button" : "Trabajemos Juntos",
+
   "footer_title" : "Desarrollador Flutter",
   "footer_final_text" : "© 2025 By Sergio Caro, Hecho con 💗 y Flutter",
   "footer_contact_label" : "Contactame: ",
