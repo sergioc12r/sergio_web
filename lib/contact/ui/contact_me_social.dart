@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sergio_web/common/data/utils_urls.dart';
 import 'package:sergio_web/common/icons/cu_icons.dart';
 import 'package:sergio_web/common/social_media/social_media_item.dart';
 import 'package:sergio_web/common/widgets/glass_card.dart';
@@ -28,19 +29,31 @@ class ContactMeSocial extends StatelessWidget {
                 child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: SocialMediaItem(
-                  path: CUIcons.linkedin, size: 20, color: Colors.blueAccent),
+                path: CUIcons.linkedin,
+                size: 20,
+                color: Colors.blueAccent,
+                url: UtilsUrls.linkedin,
+              ),
             )),
             GlassCard(
                 child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: SocialMediaItem(
-                  path: CUIcons.instagram, size: 20, color: Colors.blueAccent),
+                path: CUIcons.instagram,
+                size: 20,
+                color: Colors.blueAccent,
+                url: UtilsUrls.instagram,
+              ),
             )),
             GlassCard(
                 child: Padding(
               padding: const EdgeInsets.all(15.0),
               child: SocialMediaItem(
-                  path: CUIcons.github, size: 20, color: Colors.blueAccent),
+                path: CUIcons.github,
+                size: 20,
+                color: Colors.blueAccent,
+                url: UtilsUrls.github,
+              ),
             )),
           ],
         )
