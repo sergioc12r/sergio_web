@@ -1,16 +1,1 @@
-{
-  "hosting": {
-    "public": "build/web",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
-}
+{"flutter":{"platforms":{"android":{"default":{"projectId":"sergio-website-cd616","appId":"1:515367670172:android:18ee7ec1a56c721bf97859","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"sergio-website-cd616","appId":"1:515367670172:ios:6f8e66ae9f3209fbf97859","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"sergio-website-cd616","configurations":{"android":"1:515367670172:android:18ee7ec1a56c721bf97859","ios":"1:515367670172:ios:6f8e66ae9f3209fbf97859","web":"1:515367670172:web:1a22d3fc5f9f74d1f97859"}}}}}}

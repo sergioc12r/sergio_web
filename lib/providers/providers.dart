@@ -1,9 +1,11 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sergio_web/education/models/education.dart';
 import 'package:sergio_web/education/view_model/education_form_view_model.dart';
 import 'package:sergio_web/experience/model/experience_model.dart';
 import 'package:sergio_web/experience/ui/experience_form_view_model.dart';
+import 'package:sergio_web/firebase_options.dart';
 import 'package:sergio_web/tech_stack/model/tech_stack_model.dart';
 import 'package:sergio_web/tech_stack/ui/tech_stack_form_view_model.dart';
 
@@ -28,7 +30,13 @@ class AppConfigNotifier extends StateNotifier<bool> {
     debugPrint("🤖 Iniciando la carga de configuración global...");
 
     await Future.delayed(const Duration(seconds: 1));
-
+    try {
+      await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform,
+      );
+    } catch (e) {
+      debugPrint('error firebase $e');
+    }
     final edNotifier = ref.read(educationProvider.notifier);
     final expNotifier = ref.read(experienceProvider.notifier);
     final techStackNotifier = ref.read(techStackProvider.notifier);

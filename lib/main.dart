@@ -26,7 +26,7 @@ class MyApp extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final isInitialized = ref.watch(appConfigProvider);
     return MaterialApp(
-      title: 'SerchDev',
+      title: 'Serch - Dev',
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         AppLocalizations.delegate,

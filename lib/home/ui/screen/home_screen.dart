@@ -74,40 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     scrollStream: _scrollStreamController.stream,
                     revealOffset: MediaQuery.of(context).size.height * 0.2,
                     child: ProfileForm(
-                      scrollToContact: () {
-                        final context = _contactKey.currentContext;
-
-                        /// Check widget rendered
-                        if (context == null) {
-                          return;
-                        }
-
-                        /// Get renderBox
-                        final RenderBox renderBox =
-                            context.findRenderObject() as RenderBox;
-
-                        /// Get scrollable state of widget
-                        final ScrollableState scrollableState =
-                            Scrollable.of(context);
-
-                        /// Get the scrollable render box
-                        final RenderBox scrollableRenderBox =
-                            scrollableState.context.findRenderObject()
-                                as RenderBox;
-
-                        /// Get global position in the scroll
-                        final Offset position = renderBox.localToGlobal(
-                          Offset.zero,
-                          ancestor: scrollableRenderBox,
-                        );
-
-                        /// animate scroll
-                        _scrollController.animateTo(
-                          position.dy,
-                          duration: const Duration(milliseconds: 500),
-                          curve: Curves.easeInOut,
-                        );
-                      },
+                      scrollToContact: () => _animateScroll(_contactKey),
                     )),
               ),
             ),
@@ -176,6 +143,42 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+    );
+  }
+
+
+  void _animateScroll(GlobalKey key){
+    final context = key.currentContext;
+
+    /// Check widget rendered
+    if (context == null) {
+      return;
+    }
+
+    /// Get renderBox
+    final RenderBox renderBox =
+    context.findRenderObject() as RenderBox;
+
+    /// Get scrollable state of widget
+    final ScrollableState scrollableState =
+    Scrollable.of(context);
+
+    /// Get the scrollable render box
+    final RenderBox scrollableRenderBox =
+    scrollableState.context.findRenderObject()
+    as RenderBox;
+
+    /// Get global position in the scroll
+    final Offset position = renderBox.localToGlobal(
+      Offset.zero,
+      ancestor: scrollableRenderBox,
+    );
+
+    /// animate scroll
+    _scrollController.animateTo(
+      position.dy,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
     );
   }
 }

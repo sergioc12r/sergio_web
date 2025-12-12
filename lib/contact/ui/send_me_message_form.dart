@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/common/firestore/firestore_module.dart';
 import 'package:sergio_web/common/widgets/cu_gradient_button.dart';
 import 'package:sergio_web/common/widgets/glass_card.dart';
 
@@ -20,13 +21,16 @@ class _SendMeMessageFormState extends State<SendMeMessageForm> {
   final TextEditingController _messageController = TextEditingController();
 
   /// Simulate Sending Message
-  void _submitForm() {
+  void _submitForm(AppLocalizations strings) {
     if (_formKey.currentState!.validate()) {
-      ///TODO complete send message and show snackbar
+      saveContactSubmission(
+          name: _nameController.text,
+          email: _emailController.text,
+          message: _messageController.text,
+          subject: _subjectController.text);
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text(
-              'Mensaje Enviado:\nNombre: ${_nameController.text}, Email: ${_emailController.text}'),
+          content: Text(strings.send_message),
         ),
       );
 
@@ -115,7 +119,9 @@ class _SendMeMessageFormState extends State<SendMeMessageForm> {
                     validator: (value) => _validateRequired(value, strings),
                   ),
                   const SizedBox(height: 24),
-                  CuGradientButton(callback: _submitForm, title: strings.contact_form_send_button_label),
+                  CuGradientButton(callback: (){
+                    _submitForm(strings);
+                  } , title: strings.contact_form_send_button_label),
                 ],
               ),
             ),
