@@ -7,6 +7,7 @@
 
   "email" : "sergio951112@gmail.com",
   "location" : "Bogotá - Colombia",
+  "copy_clipboard_message" : "Copiado al portapapeles",
 
   "footer_title" : "Desarrollador Flutter",
   "footer_final_text" : "© 2025 By Sergio Caro, Hecho con 💗 y Flutter",
