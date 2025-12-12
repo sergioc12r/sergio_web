@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class CopyClipboardModule {
   /// Copy text into clipboard
+  /// TODO check launch email
   static Future<void> copyToClipboard(
       String textToCopy, BuildContext context) async {
     try {
       await Clipboard.setData(ClipboardData(text: textToCopy));
-
+      final strings = AppLocalizations.of(context)!;
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Copiado al portapapeles')),
+        SnackBar(content: Text(strings.copy_clipboard_message)),
       );
     } catch (e) {
       debugPrint('Error al copiar al portapapeles: $e');

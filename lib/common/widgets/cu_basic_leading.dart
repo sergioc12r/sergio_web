@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sergio_web/common/widgets/cu_transparent_button.dart';
 import 'package:sergio_web/common/widgets/glass_card.dart';
 
 class CuBasicLeading extends StatelessWidget {
@@ -6,15 +7,17 @@ class CuBasicLeading extends StatelessWidget {
       {super.key,
       required this.title,
       required this.label,
-      required this.iconData});
+      required this.iconData,
+      this.onTap});
 
   final String title;
   final String label;
   final IconData iconData;
+  final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return GlassCard(
+    final widget = GlassCard(
         child: Padding(
       padding: const EdgeInsets.all(15.0),
       child: Row(
@@ -45,5 +48,10 @@ class CuBasicLeading extends StatelessWidget {
         ],
       ),
     ));
+
+    if (onTap == null) {
+      return widget;
+    }
+    return CUTransparentButton(onTap: onTap!, child: widget);
   }
 }
