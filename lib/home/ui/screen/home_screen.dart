@@ -1,74 +1,134 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:sergio_web/common/footer/ui/footer.dart';
-import 'package:sergio_web/experience/ui/experience_widget.dart';
+import 'package:sergio_web/app_bar/cu_app_bar.dart';
+import 'package:sergio_web/common/widgets/cu_reveal_animation.dart';
+import 'package:sergio_web/contact/ui/contact_me_form.dart';
+import 'package:sergio_web/education/ui/education_form.dart';
+import 'package:sergio_web/experience/ui/experience_form.dart';
+import 'package:sergio_web/footer/ui/footer.dart';
+import 'package:sergio_web/profile/ui/profile_form.dart';
+import 'package:sergio_web/tech_stack/ui/tech_stack_form.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  late ScrollController _scrollController;
+
+  /// Stream to listen scroll and animate sections
+  final StreamController<double> _scrollStreamController =
+      StreamController<double>.broadcast();
+
+  /// Global keys of all forms widgets
+  final GlobalKey _textStackKey = GlobalKey();
+  final GlobalKey _experienceKey = GlobalKey();
+  final GlobalKey _educationKey = GlobalKey();
+  final GlobalKey _contactKey = GlobalKey();
+
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    _scrollController.dispose();
+    _scrollStreamController.close();
+    super.dispose();
+  }
+
+  /// Listen the scroll position and send it to the stream
+  bool _handleScrollNotification(ScrollNotification notification) {
+    if (notification is ScrollUpdateNotification) {
+      _scrollStreamController.sink.add(notification.metrics.pixels);
+    }
+    return false;
+  }
+
+  @override
   Widget build(BuildContext context) {
-    const Color startColor = Color(0xFF42A5F5); // Un azul medio (Blue 400)
-    const Color endColor = Color(0xFFE3F2FD);   // U
-    return Stack(
-      children: [
-        Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: [
-                startColor,
-                endColor,
-              ],
-              // stops: [0.0, 1.0],
+    const double spacing = 100;
+    return Scaffold(
+      body: NotificationListener<ScrollNotification>(
+        onNotification: _handleScrollNotification,
+        child: CustomScrollView(
+          scrollDirection: Axis.vertical,
+          controller: _scrollController,
+          slivers: <Widget>[
+            CUAppBar(),
+            SliverToBoxAdapter(
+              child: ProfileForm(),
             ),
-          ),
+            const SliverToBoxAdapter(
+              child: SizedBox(height: spacing),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                key: _textStackKey,
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: RevealAnimator(
+                    widgetKey: _textStackKey,
+                    scrollStream: _scrollStreamController.stream,
+                    revealOffset: MediaQuery.of(context).size.height * 0.7,
+                    child: TextStackForm()),
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: SizedBox(height: spacing),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                key: _experienceKey,
+                padding: const EdgeInsets.all(20.0),
+                child: RevealAnimator(
+                    widgetKey: _experienceKey,
+                    scrollStream: _scrollStreamController.stream,
+                    revealOffset: MediaQuery.of(context).size.height * 0.7,
+                    child: ExperienceForm()),
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: SizedBox(height: spacing),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                key: _educationKey,
+                padding: const EdgeInsets.all(20.0),
+                child: RevealAnimator(
+                    widgetKey: _educationKey,
+                    scrollStream: _scrollStreamController.stream,
+                    revealOffset: MediaQuery.of(context).size.height * 0.7,
+                    child: EducationForm()),
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: SizedBox(height: spacing),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                key: _contactKey,
+                padding: const EdgeInsets.all(20.0),
+                child: RevealAnimator(
+                    widgetKey: _contactKey,
+                    scrollStream: _scrollStreamController.stream,
+                    revealOffset: MediaQuery.of(context).size.height * 0.7,
+                    child: ContactMeForm()),
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: SizedBox(height: spacing),
+            ),
+            const SliverToBoxAdapter(
+              child: Footer(),
+            ),
+          ],
         ),
-        Scaffold(
-          backgroundColor: Colors.transparent,
-          body: CustomScrollView(
-            slivers: <Widget>[
-              const SliverToBoxAdapter(
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text(
-                    'Header',
-                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ),
-
-              SliverList(
-                delegate: SliverChildListDelegate(
-                  [
-                    Text(
-                      'Este es el Contenido principal.',
-                      style: TextStyle(fontSize: 18),
-                    ),
-                    SizedBox(height: 20),
-                    for (int i = 0; i < 50; i++)
-                      Padding(
-                        padding:
-                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                        child: Text('Elemento de Contenido ${i + 1}'),
-                      ),
-                  ],
-                ),
-              ),
-
-              SliverToBoxAdapter(
-                child: ExperienceWidget(),
-              ),
-
-              const SliverToBoxAdapter(
-                child: Footer(),
-              ),
-            ],
-          ),
-        ),
-      ],
+      ),
     );
   }
 }
