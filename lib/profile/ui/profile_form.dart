@@ -4,7 +4,9 @@ import 'package:sergio_web/profile/ui/profile_info_part.dart';
 import 'profile_image_widget.dart';
 
 class ProfileForm extends StatelessWidget {
-  const ProfileForm({super.key});
+  const ProfileForm({super.key, required this.scrollToContact});
+
+  final Function() scrollToContact;
 
   @override
   Widget build(BuildContext context) {
@@ -24,8 +26,8 @@ class ProfileForm extends StatelessWidget {
           children: <Widget>[
             SizedBox(
                 width: finalWidth,
-                child: ProfileInfoPart()),
-            ProfileImageWidget(),
+                child: ProfileInfoPart(scrollToContact: scrollToContact)),
+            const ProfileImageWidget(),
           ],
         );
       }

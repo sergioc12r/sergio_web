@@ -24,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       StreamController<double>.broadcast();
 
   /// Global keys of all forms widgets
+  final GlobalKey _profileKey = GlobalKey();
   final GlobalKey _textStackKey = GlobalKey();
   final GlobalKey _experienceKey = GlobalKey();
   final GlobalKey _educationKey = GlobalKey();
@@ -61,8 +62,54 @@ class _HomeScreenState extends State<HomeScreen> {
           controller: _scrollController,
           slivers: <Widget>[
             CUAppBar(),
+            const SliverToBoxAdapter(
+              child: SizedBox(height: spacing),
+            ),
             SliverToBoxAdapter(
-              child: ProfileForm(),
+              child: Padding(
+                key: _profileKey,
+                padding: const EdgeInsets.all(8.0),
+                child: RevealAnimator(
+                    widgetKey: _profileKey,
+                    scrollStream: _scrollStreamController.stream,
+                    revealOffset: MediaQuery.of(context).size.height * 0.2,
+                    child: ProfileForm(
+                      scrollToContact: () {
+                        final context = _contactKey.currentContext;
+
+                        /// Check widget rendered
+                        if (context == null) {
+                          return;
+                        }
+
+                        /// Get renderBox
+                        final RenderBox renderBox =
+                            context.findRenderObject() as RenderBox;
+
+                        /// Get scrollable state of widget
+                        final ScrollableState scrollableState =
+                            Scrollable.of(context);
+
+                        /// Get the scrollable render box
+                        final RenderBox scrollableRenderBox =
+                            scrollableState.context.findRenderObject()
+                                as RenderBox;
+
+                        /// Get global position in the scroll
+                        final Offset position = renderBox.localToGlobal(
+                          Offset.zero,
+                          ancestor: scrollableRenderBox,
+                        );
+
+                        /// animate scroll
+                        _scrollController.animateTo(
+                          position.dy,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.easeInOut,
+                        );
+                      },
+                    )),
+              ),
             ),
             const SliverToBoxAdapter(
               child: SizedBox(height: spacing),

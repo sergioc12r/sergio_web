@@ -7,7 +7,9 @@ import 'package:sergio_web/common/widgets/cu_gradient_button.dart';
 import 'package:sergio_web/common/widgets/glass_card.dart';
 
 class HeaderInfo extends StatelessWidget {
-  const HeaderInfo({super.key});
+  const HeaderInfo({super.key, required this.scrollToContact});
+
+  final Function() scrollToContact;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,6 @@ class HeaderInfo extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            /// Title
             RichText(
               text: TextSpan(
                 style: textStyle.headlineLarge,
@@ -36,7 +37,6 @@ class HeaderInfo extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-
             Text(
               strings.profile_subtitle,
               style: textStyle.titleLarge?.copyWith(
@@ -44,13 +44,11 @@ class HeaderInfo extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-
             Text(
               strings.profile_description,
               style: textStyle.bodyLarge,
             ),
             const SizedBox(height: 20),
-
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -63,49 +61,47 @@ class HeaderInfo extends StatelessWidget {
                 ),
               ],
             ),
-
             const SizedBox(height: 20),
-
-            CuGradientButton(callback: () {
-
-            }, title: strings.profile_button),
-
+            CuGradientButton(
+                callback: () {
+                  scrollToContact();
+                },
+                title: strings.profile_button),
             const SizedBox(height: 20),
-
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               spacing: 10,
               children: [
                 GlassCard(
                     child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: SocialMediaItem(
-                        path: CUIcons.linkedin,
-                        size: 20,
-                        color: Colors.blueAccent,
-                        url: UtilsUrls.linkedin,
-                      ),
-                    )),
+                  padding: const EdgeInsets.all(15.0),
+                  child: SocialMediaItem(
+                    path: CUIcons.linkedin,
+                    size: 20,
+                    color: Colors.blueAccent,
+                    url: UtilsUrls.linkedin,
+                  ),
+                )),
                 GlassCard(
                     child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: SocialMediaItem(
-                        path: CUIcons.instagram,
-                        size: 20,
-                        color: Colors.blueAccent,
-                        url: UtilsUrls.instagram,
-                      ),
-                    )),
+                  padding: const EdgeInsets.all(15.0),
+                  child: SocialMediaItem(
+                    path: CUIcons.instagram,
+                    size: 20,
+                    color: Colors.blueAccent,
+                    url: UtilsUrls.instagram,
+                  ),
+                )),
                 GlassCard(
                     child: Padding(
-                      padding: const EdgeInsets.all(15.0),
-                      child: SocialMediaItem(
-                        path: CUIcons.github,
-                        size: 20,
-                        color: Colors.blueAccent,
-                        url: UtilsUrls.github,
-                      ),
-                    )),
+                  padding: const EdgeInsets.all(15.0),
+                  child: SocialMediaItem(
+                    path: CUIcons.github,
+                    size: 20,
+                    color: Colors.blueAccent,
+                    url: UtilsUrls.github,
+                  ),
+                )),
               ],
             )
           ],
