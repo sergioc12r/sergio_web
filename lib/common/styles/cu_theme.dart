@@ -23,6 +23,7 @@ class CUThemeData {
     inputDecorationTheme: CUFieldTheme.lightInputTheme,
     colorScheme: CUThemeColors.lightColorScheme,
     elevatedButtonTheme: CUButtonTheme.lightElevatedButtonTheme,
+    iconButtonTheme: CUButtonTheme.lightIconButtonTheme,
     iconTheme: CUIconTheme.lightIconTheme,
   );
 
@@ -39,6 +40,7 @@ class CUThemeData {
     inputDecorationTheme: CUFieldTheme.darkInputTheme,
     colorScheme: CUThemeColors.darkColorScheme,
     elevatedButtonTheme: CUButtonTheme.darkElevatedButtonTheme,
+    iconButtonTheme: CUButtonTheme.darkIconButtonTheme,
     iconTheme: CUIconTheme.darkIconTheme,
   );
 }

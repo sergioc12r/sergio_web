@@ -3,7 +3,7 @@ import 'package:sergio_web/common/styles/theme_colors.dart';
 
 class CUIconTheme {
   static IconThemeData lightIconTheme = IconThemeData(
-    color: CUThemeColors.onPrimary,
+    color: CUThemeColors.backgroundDark,
     size: 24
   );
 

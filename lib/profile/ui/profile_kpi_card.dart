@@ -14,6 +14,7 @@ class ProfileKpiCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textStyle = Theme.of(context).textTheme;
+    final colorStyle = Theme.of(context).iconTheme;
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -25,7 +26,7 @@ class ProfileKpiCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: Icon(icon, size: 20),
+              child: Icon(icon, size: 20, color: colorStyle.color),
             ),
             const SizedBox(width: 8),
             Column(

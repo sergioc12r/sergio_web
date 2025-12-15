@@ -16,19 +16,17 @@ class CUChip extends StatelessWidget {
     );
   }
 
-  Widget? _checkAsset(String? url){
-    if(url?.isEmpty ?? true){
+  Widget? _checkAsset(String? url) {
+    if (url?.isEmpty ?? true) {
       return null;
     }
 
-    if(url!.contains('http')){
-      return SvgPicture.network(
-        svgUrl!
-      );
+    if (url!.contains('http')) {
+      return SvgPicture.network(url);
     }
 
     return SvgPicture.asset(
-      svgUrl!,
+      url,
       colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn),
     );
   }

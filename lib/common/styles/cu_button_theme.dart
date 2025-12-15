@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:sergio_web/common/styles/cu_icon_theme.dart';
 import 'package:sergio_web/common/styles/cu_text_styles.dart';
 import 'package:sergio_web/common/styles/theme_colors.dart';
 
 class CUButtonTheme {
   static ElevatedButtonThemeData lightElevatedButtonTheme =
-      ElevatedButtonThemeData(
+  ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       foregroundColor: CUThemeColors.backgroundDark,
       backgroundColor: CUThemeColors.primaryLight,
@@ -20,7 +21,7 @@ class CUButtonTheme {
   );
 
   static ElevatedButtonThemeData darkElevatedButtonTheme =
-      ElevatedButtonThemeData(
+  ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       foregroundColor: CUThemeColors.backgroundLight,
       backgroundColor: CUThemeColors.primaryDark,
@@ -32,6 +33,20 @@ class CUButtonTheme {
       elevation: 4,
       animationDuration: const Duration(milliseconds: 500),
       enableFeedback: true,
+    ),
+  );
+
+  static IconButtonThemeData lightIconButtonTheme = IconButtonThemeData(
+    style: ButtonStyle(
+      iconColor: WidgetStateProperty.all(CUIconTheme.darkIconTheme.color),
+        textStyle: WidgetStateProperty.all(CUTextStyles.lightTheme.titleMedium!.copyWith(color: Colors.white)),
+      ),
+  );
+
+  static IconButtonThemeData darkIconButtonTheme = IconButtonThemeData(
+    style: ButtonStyle(
+      iconColor: WidgetStateProperty.all(CUIconTheme.darkIconTheme.color),
+      textStyle: WidgetStateProperty.all(CUTextStyles.lightTheme.titleMedium!.copyWith(color: Colors.white)),
     ),
   );
 }

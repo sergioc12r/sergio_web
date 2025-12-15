@@ -13,6 +13,7 @@ class CuGradientButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final iconStyle = Theme.of(context).iconButtonTheme;
     return Container(
       width: double.infinity,
       height: 50,
@@ -40,10 +41,11 @@ class CuGradientButton extends StatelessWidget {
           children: <Widget>[
             Icon(
               Icons.send,
-              color: Theme.of(context).iconTheme.color,
+              color: iconStyle.style?.iconColor?.resolve(<WidgetState>{}),
             ),
             Text(
               title,
+              style: iconStyle.style?.textStyle?.resolve(<WidgetState>{}),
             ),
           ],
         ),
