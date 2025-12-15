@@ -3,7 +3,7 @@
     {
       "title": "Flutter Dev Ssr Adv. - Industria Bancaria",
       "company": "Globant",
-      "description": "Desarrollo y soporte de aplicaciones móviles críticas para la banca, garantizando el cumplimiento de estrictos estándares de seguridad, rendimiento y normativas financieras.",
+      "description": "Desarrollo y soporte de aplicación de banca ecuatoriana para la sección de empresas",
       "isCurrent": true,
       "initDate": "2025-02-01",
       "endDate": "2025-11-01",
@@ -15,12 +15,20 @@
         { "title": "GO Router" },
         { "title": "Packages" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Liderar el equipo de la aplicación y apoyar el flujo de trabajo empresarial del Líder Técnico." },
+        { "body": "Participar en las sesiones de planificación con los equipos de desarrollo, producto y diseño, estimando historias de usuario para el equipo Flutter." },
+        { "body": "Desarrollar nuevas funcionalidades y corrección de errores." },
+        { "body": "Realizar mantenimiento de paquetes internos con pruebas y documentación." },
+        { "body": "Analizar y planificar mejoras técnicas para mejorar el rendimiento de la aplicación." },
+        { "body": "Apoyar los últimos sprints de pruebas (desarrollo, control de calidad y producción)." },
+        { "body": "Corregir errores de los pipelines de iOS y Android en Azure Pipelines." }
+      ]
     },
     {
-      "title": "Flutter Dev Ssr Adv. - Lider de equipo - Empresa de Salud - Latam",
+      "title": "Flutter Dev Ssr Adv. - Líder de equipo - Empresa de Salud - Latam",
       "company": "Globant",
-      "description": "Liderazgo técnico del equipo de desarrollo, supervisando la arquitectura e implementación de soluciones Flutter para una importante compañía de salud en Latinoamérica.",
+      "description": "Liderazgo técnico del equipo de desarrollo, supervisando la implementación de soluciones para una importante compañía de salud en Latam.",
       "isCurrent": false,
       "initDate": "2024-01-01",
       "endDate": "2025-01-01",
@@ -30,12 +38,21 @@
         { "title": "Firebase Deprecation Alternatives" },
         { "title": "Xcode" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Liderar las reuniones diarias del equipo y delegar responsabilidades según el cronograma establecido con el cliente." },
+        { "body": "Mantener una comunicación constante y eficaz con el cliente para comprender los requisitos urgentes, ayudando con la gestión eficiente del tiempo para el equipo." },
+        { "body": "Completar la documentación necesaria requerida por el cliente para el lanzamiento de algunos productos." },
+        { "body": "Conocer las alertas del sistema para prevenir problemas o errores." },
+        { "body": "Gestionar el proceso de lanzamiento en entornos de producción." },
+        { "body": "Incorporar nuevas funciones de plataformas antiguas desarrolladas con otras tecnologías (Angular, Ionic)." },
+        { "body": "Colaborar con la carga de contenido que la página web muestra en distintos países." },
+        { "body": "Gestionar el proceso de traducción del conocimiento (KT) con el equipo de desarrollo hacia el equipo del cliente." }
+      ]
     },
     {
       "title": "Flutter Dev Ssr - Empresa de Salud - Latam",
       "company": "Globant",
-      "description": "Desarrollo de nuevas características e integración de APIs para la aplicación de salud, enfocándose en la estabilidad y escalabilidad del producto para un alto volumen de usuarios.",
+      "description": "Soporte y optimización de desarrollos de la aplicación para personal médico de una importante compañía de salud en Latam.",
       "isCurrent": false,
       "initDate": "2022-12-01",
       "endDate": "2024-12-01",
@@ -45,12 +62,17 @@
         { "title": "Local Auth" },
         { "title": "Freezed" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Resolución de incidencias de la aplicación Nutritional Connection." },
+        { "body": "Desarrollar nuevas funcionalidades aprobadas por el responsable del proyecto y la agencia de marketing." },
+        { "body": "Validar checklist previa al lanzamiento para garantizar la estabilidad del despliegue (pipelines y escáner de seguridad)." },
+        { "body": "Liderar el proceso de testing (TestFlight - Android Closed beta testing) con personal aprobado por el cliente." }
+      ]
     },
     {
       "title": "Flutter Dev Ssr - Industria de Transporte - USA",
       "company": "Globant",
-      "description": "Colaboración en el desarrollo de una aplicación móvil de logística y seguimiento para la industria de transporte en EE. UU., implementando funcionalidades de geolocalización avanzada.",
+      "description": "Desarrollo de aplicación MVP para empresa de transporte en EE. UU.",
       "isCurrent": false,
       "initDate": "2022-01-01",
       "endDate": "2022-11-01",
@@ -61,12 +83,16 @@
         { "title": "Unit Testing" },
         { "title": "AutoRoute" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Desarrollar una aplicación que funciona como plataforma central para conectar conductores de camiones con oportunidades laborales." },
+        { "body": "Desarrollar interfaz de deslizamiento similar a Tinder para una gestión de las ofertas de trabajo, permitiendo aplicar o rechazar rápidamente estas oportunidades." },
+        { "body": "Añadir la funcionalidad de geolocalización para priorizar ofertas por ubicación." }
+      ]
     },
     {
       "title": "Mobile Developer Leader",
       "company": "Loro (Wishper SAS)",
-      "description": "Liderazgo y dirección del equipo de desarrollo móvil, gestionando el ciclo de vida completo de la aplicación desde la arquitectura hasta el lanzamiento en tiendas.",
+      "description": "Liderazgo, desarrollo y mantenimiento de aplicación ecommerce para centros comerciales bajo el modelo de red social.",
       "isCurrent": false,
       "initDate": "2020-02-01",
       "endDate": "2022-11-01",
@@ -78,21 +104,21 @@
         { "title": "Versioning" }
       ],
       "activities": [
-        {
-          "body": "Diseño e implementación de planes de optimización de la aplicación según las características del dispositivo y la velocidad de la red, mejorando significativamente la experiencia de usuario."
-        },
-        {
-          "body": "Diseño y desarrollo de un 'Asistente Virtual' interno que sirvió como guía persistente de información relevante, mejorando la retención de usuarios en un 40%."
-        },
-        { "body": "Migración y refactorización del código base a Dart Null Safety para aumentar la robustez y reducir errores en tiempo de ejecución." },
-        { "body": "Establecimiento y gestión de procesos de CI/CD utilizando FastLane para la automatización de la compilación y el despliegue a las tiendas de aplicaciones." },
-        { "body": "Mentoría y entrenamiento técnico a desarrolladores junior y semi-senior en tecnologías Flutter, BLOC y Clean Architecture." }
+        { "body": "Diseñar y ejecutar planes de optimización por tipo de dispositivo para mejorar la experiencia del usuario." },
+        { "body": "Diseñar y desarrollar un asistente mascota persistente en la aplicación con información relevante, curiosidades y chistes que mejoró la retención en un 40%." },
+        { "body": "Modificar la sección de checkout para habilitar e integrar distintos métodos de pago adicionales a TC." },
+        { "body": "Desarrollar secciones de Retos que permitían a los usuarios y marcas interactuar juntos bajo la modalidad de videos." },
+        { "body": "Integrar un ambiente con dos plataformas de pago para evitar el porcentaje de rechazo en las compras." },
+        { "body": "Participar en la nueva estructuración de datos de Loro, que permitió la integración de cualquier tipo de marca." },
+        { "body": "Desarrollar nueva sección de restaurantes con relación de geolocalización para visualizar restaurantes cercanos." },
+        { "body": "Integrar dynamic links con información de productos, categorías y usuarios para una correcta redirección." },
+        { "body": "Participar en los comités de dirección y alineación del equipo técnico, marketing y gerencia." }
       ]
     },
     {
       "title": "Mobile Developer",
       "company": "Loro (Wishper SAS)",
-      "description": "Desarrollo de funcionalidades principales para la aplicación móvil, asegurando la calidad del código mediante pruebas unitarias e integración continua.",
+      "description": "Desarrollo y mantenimiento de aplicación ecommerce para centros comerciales bajo el modelo de red social.",
       "isCurrent": false,
       "initDate": "2020-02-01",
       "endDate": "2019-05-01",
@@ -101,12 +127,16 @@
         { "title": "Android Studio" },
         { "title": "Dart" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Desarrollar el MVP de la red social para comprar/regalar a contactos." },
+        { "body": "Desplegar el MVP para AppStore y Google Play Store." },
+        { "body": "Integrar Google Analytics para obtención de reportes para el equipo de marketing." }
+      ]
     },
     {
       "title": "Android Developer",
       "company": "Azzorti Colombia",
-      "description": "Desarrollo de una aplicación nativa en Android con Java, incluyendo módulos para la generación de reportes y la sincronización de datos fuera de línea.",
+      "description": "Mantenimiento de una aplicación nativa en Android con Java con actualización mensual de documentos de uso laboral de los/las clientes.",
       "isCurrent": false,
       "initDate": "2018-05-01",
       "endDate": "2018-08-01",
@@ -115,12 +145,15 @@
         { "title": "Android Studio" },
         { "title": "Generate Pdf" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Actualización mensual de catálogo de ventas para el posterior descargue por parte de las clientas." },
+        { "body": "Generación de APK con diseño/nombres personalizados para distintos países como Colombia, Bolivia y Perú." }
+      ]
     },
     {
-      "title": "Software Intern",
+      "title": "Practicante RAN (Radio Acceso Nacional)",
       "company": "Avantel SAS",
-      "description": "Prácticas de ingeniería enfocadas en el desarrollo de herramientas internas con Python (PYQT) y Java para la automatización de informes técnicos y la mejora de la UI interna.",
+      "description": "Prácticas de ingeniería enfocadas en el desarrollo de herramientas internas con Python (PYQT) y Java para la automatización de informes técnicos.",
       "isCurrent": false,
       "initDate": "2017-06-01",
       "endDate": "2018-02-01",
@@ -132,7 +165,11 @@
         { "title": "Reports" },
         { "title": "UI" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Mantenimiento y creación de plugins para Google Earth utilizando Python, para el acceso y visualización de información de la red nacional." },
+        { "body": "Desarrollo de aplicación Android para automatización de pruebas y toma/envío de reportes para smartphones del equipo técnico." },
+        { "body": "Implementación de aplicación Android para llenar reporte diario de los vehículos del equipo técnico antes de salir a campo." }
+      ]
     }
   ]
 }

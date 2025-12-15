@@ -1,9 +1,9 @@
 {
   "data": [
     {
-      "title": "Flutter Dev Ssr Adv. - Bank Industry",
+      "title": "Flutter Dev Ssr Adv. - Banking Industry",
       "company": "Globant",
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "Development and support of an Ecuadorian banking application for the business sector.",
       "isCurrent": true,
       "initDate": "2025-02-01",
       "endDate": "2025-11-01",
@@ -15,12 +15,20 @@
         { "title": "GO Router" },
         { "title": "Packages" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Lead the application team and support the Technical Lead's business workflow." },
+        { "body": "Participate in planning sessions with development, product, and design teams, estimating user stories for the Flutter team." },
+        { "body": "Develop new features and fix bugs." },
+        { "body": "Perform maintenance of internal packages with testing and documentation." },
+        { "body": "Analyze and plan technical improvements to enhance application performance." },
+        { "body": "Support the final testing sprints (development, QA, and production)." },
+        { "body": "Fix iOS and Android pipeline errors in Azure Pipelines." }
+      ]
     },
     {
-      "title": "Flutter Dev Ssr Adv. -  Team leader Latam Healthcare Company",
+      "title": "Flutter Dev Ssr Adv. - Team Leader - Latam Health Company",
       "company": "Globant",
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "Technical leadership of the development team, overseeing the implementation of solutions for a major health company in Latam.",
       "isCurrent": false,
       "initDate": "2024-01-01",
       "endDate": "2025-01-01",
@@ -30,12 +38,21 @@
         { "title": "Firebase Deprecation Alternatives" },
         { "title": "Xcode" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Lead daily team meetings and delegate responsibilities according to the schedule established with the client." },
+        { "body": "Maintain constant and effective communication with the client to understand urgent requirements, assisting with efficient time management for the team." },
+        { "body": "Complete the necessary documentation required by the client for the launch of certain products." },
+        { "body": "Monitor system alerts to prevent problems or errors." },
+        { "body": "Manage the release process in production environments." },
+        { "body": "Incorporate new features from legacy platforms developed with other technologies (Angular, Ionic)." },
+        { "body": "Collaborate with content loading displayed by the website in different countries." },
+        { "body": "Manage the Knowledge Transfer (KT) process from the development team to the client's team." }
+      ]
     },
     {
-      "title": "Flutter Dev Ssr - Latam Healthcare Company",
+      "title": "Flutter Dev Ssr - Latam Health Company",
       "company": "Globant",
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "Support and optimization of application developments for medical personnel of a major health company in Latam.",
       "isCurrent": false,
       "initDate": "2022-12-01",
       "endDate": "2024-12-01",
@@ -45,12 +62,17 @@
         { "title": "Local Auth" },
         { "title": "Freezed" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Resolution of incidents for the Nutritional Connection application." },
+        { "body": "Develop new features approved by the project manager and the marketing agency." },
+        { "body": "Validate pre-launch checklist to ensure deployment stability (pipelines and security scanner)." },
+        { "body": "Lead the testing process (TestFlight - Android Closed Beta Testing) with personnel approved by the client." }
+      ]
     },
     {
-      "title": "Flutter Dev Ssr - Truckers Industry",
+      "title": "Flutter Dev Ssr - Transport Industry - USA",
       "company": "Globant",
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "Development of an MVP application for a transport company in the USA.",
       "isCurrent": false,
       "initDate": "2022-01-01",
       "endDate": "2022-11-01",
@@ -61,12 +83,16 @@
         { "title": "Unit Testing" },
         { "title": "AutoRoute" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Develop an application that functions as a central platform to connect truck drivers with job opportunities." },
+        { "body": "Develop a Tinder-like swipe interface for managing job offers, allowing quick application or rejection of opportunities." },
+        { "body": "Add geolocation functionality to prioritize offers by location." }
+      ]
     },
     {
       "title": "Mobile Developer Leader",
       "company": "Loro (Wishper SAS)",
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "Leadership, development, and maintenance of an e-commerce application for shopping centers under a social network model.",
       "isCurrent": false,
       "initDate": "2020-02-01",
       "endDate": "2022-11-01",
@@ -78,21 +104,21 @@
         { "title": "Versioning" }
       ],
       "activities": [
-        {
-          "body": "Design and execute optimization plans by device to improve user experience. The app reads device characteristics and network speed for segmenting the smartphone into three categories and optimizing various aspects for a fast experience."
-        },
-        {
-          "body": "Design and develop an internal “Pet Assistant”, this is a persistent assistant with all relevant sections information and a funny and curious chapter of jokes. This one improved user retention by 40%."
-        },
-        { "body": "Lorem ipsum dolor sit amet" },
-        { "body": "Lorem ipsum dolor sit amet" },
-        { "body": "Lorem ipsum dolor sit amet" }
+        { "body": "Design and execute optimization plans by device type to improve user experience." },
+        { "body": "Design and develop a persistent mascot assistant in the application with relevant information, curiosities, and jokes that improved retention by 40%." },
+        { "body": "Modify the checkout section to enable and integrate different payment methods in addition to credit cards (TC)." },
+        { "body": "Develop 'Challenges' sections that allowed users and brands to interact together through videos." },
+        { "body": "Integrate an environment with two payment platforms to avoid the purchase rejection rate." },
+        { "body": "Participate in the new data structuring of Loro, which allowed the integration of any type of brand." },
+        { "body": "Develop a new restaurant section with geolocation capabilities to display nearby restaurants." },
+        { "body": "Integrate dynamic links with product, category, and user information for correct redirection." },
+        { "body": "Participate in the steering and alignment committees for the technical team, marketing, and management." }
       ]
     },
     {
       "title": "Mobile Developer",
       "company": "Loro (Wishper SAS)",
-      "description": "Lorem ipsum dolor sit amet",
+      "description": "Development and maintenance of an e-commerce application for shopping centers under a social network model.",
       "isCurrent": false,
       "initDate": "2020-02-01",
       "endDate": "2019-05-01",
@@ -101,12 +127,16 @@
         { "title": "Android Studio" },
         { "title": "Dart" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Develop the MVP of the social network for buying/gifting to contacts." },
+        { "body": "Deploy the MVP to the App Store and Google Play Store." },
+        { "body": "Integrate Google Analytics to obtain reports for the marketing team." }
+      ]
     },
     {
       "title": "Android Developer",
       "company": "Azzorti Colombia",
-      "description": "",
+      "description": "Maintenance of a native Android application using Java with monthly updates of work-related documents for clients.",
       "isCurrent": false,
       "initDate": "2018-05-01",
       "endDate": "2018-08-01",
@@ -115,12 +145,15 @@
         { "title": "Android Studio" },
         { "title": "Generate Pdf" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Monthly update of the sales catalog for subsequent download by clients." },
+        { "body": "APK generation with customized designs/names for different countries like Colombia, Bolivia, and Peru." }
+      ]
     },
     {
-      "title": "Software Intern",
+      "title": "RAN (Radio Access Network) Intern",
       "company": "Avantel SAS",
-      "description": "Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet",
+      "description": "Engineering internship focused on developing internal tools with Python (PYQT) and Java for the automation of technical reports.",
       "isCurrent": false,
       "initDate": "2017-06-01",
       "endDate": "2018-02-01",
@@ -132,7 +165,11 @@
         { "title": "Reports" },
         { "title": "UI" }
       ],
-      "activities": []
+      "activities": [
+        { "body": "Maintenance and creation of plugins for Google Earth using Python, for access and visualization of national network information." },
+        { "body": "Development of an Android application for test automation and report taking/sending for the technical team's smartphones." },
+        { "body": "Implementation of an Android application to fill out the daily vehicle report for the technical team before going out to the field." }
+      ]
     }
   ]
 }
