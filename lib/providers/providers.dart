@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sergio_web/about_me/model/about_me_model.dart';
+import 'package:sergio_web/about_me/ui/about_me_form_view_model.dart';
 import 'package:sergio_web/education/models/education.dart';
 import 'package:sergio_web/education/view_model/education_form_view_model.dart';
 import 'package:sergio_web/experience/model/experience_model.dart';
@@ -14,6 +16,8 @@ part '../education/provider/education_provider.dart';
 part '../experience/provider/experience_provider.dart';
 
 part '../tech_stack/provider/tech_stack_provider.dart';
+
+part '../about_me/provider/about_me_provider.dart';
 
 final appConfigProvider = StateNotifierProvider<AppConfigNotifier, bool>((ref) {
   return AppConfigNotifier(ref);
@@ -40,11 +44,13 @@ class AppConfigNotifier extends StateNotifier<bool> {
     final edNotifier = ref.read(educationProvider.notifier);
     final expNotifier = ref.read(experienceProvider.notifier);
     final techStackNotifier = ref.read(techStackProvider.notifier);
+    final aboutMeNotifier = ref.read(aboutMeProvider.notifier);
 
     final List<Future<void>> futures = [
       edNotifier.loadEducationData(currentLocale),
       expNotifier.loadExperienceData(currentLocale),
-      techStackNotifier.loadExperienceData(currentLocale)
+      techStackNotifier.loadExperienceData(currentLocale),
+      aboutMeNotifier.loadAboutMeData(currentLocale),
     ];
 
     await Future.wait(futures);

@@ -29,4 +29,16 @@ class DataResources {
   static const String _techStack = "assets/items/tech_stack.json";
 
   static String getTechStack() => _techStack;
+
+  /// About Me data
+  static const String _enAboutMe = "assets/items/en/about_me.json";
+  static const String _esAboutMe = "assets/items/es/about_me.json";
+
+  static String getAboutMeData({String locale = '_esCode'}) {
+    if (locale.toUpperCase().contains(_esCode)) {
+      return _esAboutMe;
+    } else {
+      return _enAboutMe;
+    }
+  }
 }

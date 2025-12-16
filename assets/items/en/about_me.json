@@ -1,0 +1,40 @@
+{
+  "data": {
+    "title": "About Me",
+    "sub_title": "I create apps that are part of your daily life",
+    "description": "I am a mechatronics engineer and software developer, with a clear focus on responsibility and results orientation. I have over 7 years of experience in the sector, 6 of which have been strongly focused on mobile development with Flutter.\n\nThroughout my career, I have had the opportunity to participate in projects across various industries. I am comfortable taking on leadership roles to guide teams and ensure project success.\n\nOne of my greatest strengths is my flexibility and adaptability in the face of new technological challenges. I constantly seek to share my knowledge and collaborate closely with both colleagues and clients, ensuring that we jointly achieve all the planned objectives.",
+    "image": "https://raw.githubusercontent.com/sergioc12r/assets/refs/heads/main/about.jpg",
+    "tech_items": [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "REST APIs",
+      "Clean Architecture",
+      "Bloc",
+      "MVVM",
+      "Git"
+    ],
+    "relevant_items": [
+      {
+        "title": "6+",
+        "sub_title": "Years of experience",
+        "icon_url": "https://api.iconify.design/lineicons/code.svg"
+      },
+      {
+        "title": "5+",
+        "sub_title": "Projects in different industries",
+        "icon_url": "https://api.iconify.design/lineicons/rocket-5.svg"
+      },
+      {
+        "title": "6+",
+        "sub_title": "Applications deployed to stores",
+        "icon_url": "https://api.iconify.design/lineicons/flutter.svg"
+      },
+      {
+        "title": "∞",
+        "sub_title": "Coffee",
+        "icon_url": "https://api.iconify.design/lineicons/coffee-cup-2.svg"
+      }
+    ]
+  }
+}

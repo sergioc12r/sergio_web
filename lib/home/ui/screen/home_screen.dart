@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:sergio_web/about_me/ui/about_me_form.dart';
 import 'package:sergio_web/app_bar/cu_app_bar.dart';
 import 'package:sergio_web/common/widgets/cu_reveal_animation.dart';
 import 'package:sergio_web/contact/ui/contact_me_form.dart';
@@ -25,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   /// Global keys of all forms widgets
   final GlobalKey _profileKey = GlobalKey();
+  final GlobalKey _aboutMeKey = GlobalKey();
   final GlobalKey _textStackKey = GlobalKey();
   final GlobalKey _experienceKey = GlobalKey();
   final GlobalKey _educationKey = GlobalKey();
@@ -69,13 +71,23 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Padding(
                 key: _profileKey,
                 padding: const EdgeInsets.all(8.0),
+                child: ProfileForm(
+                  scrollToContact: () => _animateScroll(_contactKey),
+                ),
+              ),
+            ),
+            const SliverToBoxAdapter(
+              child: SizedBox(height: spacing),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                key: _aboutMeKey,
+                padding: const EdgeInsets.all(8.0),
                 child: RevealAnimator(
-                    widgetKey: _profileKey,
+                    widgetKey: _aboutMeKey,
                     scrollStream: _scrollStreamController.stream,
-                    revealOffset: MediaQuery.of(context).size.height * 0.2,
-                    child: ProfileForm(
-                      scrollToContact: () => _animateScroll(_contactKey),
-                    )),
+                    revealOffset: MediaQuery.of(context).size.height * 0.8,
+                    child: AboutMeForm()),
               ),
             ),
             const SliverToBoxAdapter(
@@ -88,7 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RevealAnimator(
                     widgetKey: _textStackKey,
                     scrollStream: _scrollStreamController.stream,
-                    revealOffset: MediaQuery.of(context).size.height * 0.7,
+                    revealOffset: MediaQuery.of(context).size.height * 0.8,
                     child: TextStackForm()),
               ),
             ),
@@ -102,7 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RevealAnimator(
                     widgetKey: _experienceKey,
                     scrollStream: _scrollStreamController.stream,
-                    revealOffset: MediaQuery.of(context).size.height * 0.7,
+                    revealOffset: MediaQuery.of(context).size.height * 0.8,
                     child: ExperienceForm()),
               ),
             ),
@@ -116,7 +128,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RevealAnimator(
                     widgetKey: _educationKey,
                     scrollStream: _scrollStreamController.stream,
-                    revealOffset: MediaQuery.of(context).size.height * 0.7,
+                    revealOffset: MediaQuery.of(context).size.height * 0.8,
                     child: EducationForm()),
               ),
             ),
@@ -130,7 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RevealAnimator(
                     widgetKey: _contactKey,
                     scrollStream: _scrollStreamController.stream,
-                    revealOffset: MediaQuery.of(context).size.height * 0.7,
+                    revealOffset: MediaQuery.of(context).size.height * 0.8,
                     child: ContactMeForm()),
               ),
             ),
@@ -146,8 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-
-  void _animateScroll(GlobalKey key){
+  void _animateScroll(GlobalKey key) {
     final context = key.currentContext;
 
     /// Check widget rendered
@@ -156,17 +167,14 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     /// Get renderBox
-    final RenderBox renderBox =
-    context.findRenderObject() as RenderBox;
+    final RenderBox renderBox = context.findRenderObject() as RenderBox;
 
     /// Get scrollable state of widget
-    final ScrollableState scrollableState =
-    Scrollable.of(context);
+    final ScrollableState scrollableState = Scrollable.of(context);
 
     /// Get the scrollable render box
     final RenderBox scrollableRenderBox =
-    scrollableState.context.findRenderObject()
-    as RenderBox;
+        scrollableState.context.findRenderObject() as RenderBox;
 
     /// Get global position in the scroll
     final Offset position = renderBox.localToGlobal(
