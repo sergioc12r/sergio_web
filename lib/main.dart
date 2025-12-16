@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sergio_web/common/icons/cu_loading.dart';
@@ -25,6 +26,9 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isInitialized = ref.watch(appConfigProvider);
+    FirebaseAnalytics analytics = FirebaseAnalytics.instance;
+    FirebaseAnalyticsObserver observer = FirebaseAnalyticsObserver(analytics: analytics);
+
     return MaterialApp(
       title: 'sergiocarodev.com',
       debugShowCheckedModeBanner: false,
@@ -39,6 +43,7 @@ class MyApp extends ConsumerWidget {
       themeMode: ThemeMode.system,
       theme: CUThemeData.lightTheme,
       darkTheme: CUThemeData.darkTheme,
+      navigatorObservers: [observer],
       home: isInitialized ? const HomeScreen() : const CULoading(),
     );
   }

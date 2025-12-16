@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:sergio_web/about_me/ui/about_me_form.dart';
@@ -45,6 +46,9 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     _scrollController = ScrollController();
+    FirebaseAnalytics.instance.logEvent(
+      name: 'visit_home',
+    );
   }
 
   @override
