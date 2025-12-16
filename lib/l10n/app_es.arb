@@ -18,6 +18,7 @@
   "profile_subtitle" : "Flutter Dev & Ingeniero Mecatrónico",
   "profile_description" : "Desarrollo soluciones móviles multiplataforma, con la misión de generar un impacto positivo y tangible en la experiencia de los usuarios. Luego voy al gym, juego Fortnite y tomo cafe.",
   "profile_button" : "Trabajemos Juntos",
+  "profile_simple_title" : "Inicio",
 
   "footer_title" : "Desarrollador Flutter",
   "footer_final_text" : "© 2025 By Sergio Caro, Hecho con 💗 y Flutter",
@@ -26,15 +27,20 @@
   "footer_location" : "Bogotá, Colombia",
 
   "experience_title" : "Experiencia Laboral",
+  "simple_experience_title" : "Experiencia",
   "experience_subtitle" : "Mi trayectoria profesional en el desarrollo móvil",
   "experience_current" : "Actual",
 
+  "about_me_title" : "Sobre Mi",
+
   "education_title" : "Educación y Certificaciones",
+  "simple_education_title" : "Educación",
   "education_subtitle" : "Formación académica y aprendizaje continuo",
 
   "tech_stack_title" : "Stack Tecnológico",
 
   "contact_title" : "¿Tienes un Proyecto?",
+  "simple_contact_title" : "Contacto",
   "contact_sub_title" : "Estoy disponible para proyectos freelance y colaboraciones. ¡Hablemos!",
   "contact_info_title" : "Información de Contacto",
   "contact_info_email" : "Email",

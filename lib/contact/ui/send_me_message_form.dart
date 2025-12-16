@@ -119,7 +119,7 @@ class _SendMeMessageFormState extends State<SendMeMessageForm> {
                     validator: (value) => _validateRequired(value, strings),
                   ),
                   const SizedBox(height: 24),
-                  CuGradientButton(callback: (){
+                  CUGradientButton(callback: (){
                     _submitForm(strings);
                   } , title: strings.contact_form_send_button_label),
                 ],

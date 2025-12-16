@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CuGradientButton extends StatelessWidget {
-  CuGradientButton({super.key, required this.callback, required this.title});
+class CUGradientButton extends StatelessWidget {
+  CUGradientButton({super.key, required this.callback, required this.title});
 
   final Function() callback;
   final String title;

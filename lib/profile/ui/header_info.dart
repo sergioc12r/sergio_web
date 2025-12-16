@@ -62,7 +62,7 @@ class HeaderInfo extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 20),
-            CuGradientButton(
+            CUGradientButton(
                 callback: () {
                   scrollToContact();
                 },

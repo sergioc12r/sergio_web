@@ -18,6 +18,7 @@
   "profile_subtitle" : "Flutter Dev & Mechatronic Eng.",
   "profile_description" : "I develop cross-platform mobile solutions, with the mission of generating a positive and tangible impact on user experience. Afterwards, I go to the gym, play Fortnite, and drink coffee.",
   "profile_button" : "Lets work together",
+  "profile_simple_title" : "Home",
 
   "footer_title" : "Flutter Developer",
   "footer_final_text" : "© 2025 By Sergio Caro, Made with 💗 and Flutter",
@@ -26,15 +27,20 @@
   "footer_location" : "Bogotá, Colombia",
 
   "experience_title" : "Work Experience",
+  "simple_experience_title" : "Experience",
   "experience_subtitle" : "My experience in mobile development",
   "experience_current" : "Current",
 
+  "about_me_title" : "About Me",
+
   "education_title" : "Education and Certificates",
+  "simple_education_title" : "Education",
   "education_subtitle" : "Academic education and continuous learning",
 
   "tech_stack_title" : "Tech Stack",
 
   "contact_title" : "Do you have a project?",
+  "simple_contact_title" : "Contact",
   "contact_sub_title" : "I'm available for freelance projects and collaborations. Let's talk!",
   "contact_info_title" : "Contact Information",
   "contact_info_email" : "Email",

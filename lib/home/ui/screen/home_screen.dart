@@ -1,14 +1,20 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:sergio_web/about_me/ui/about_me_form.dart';
 import 'package:sergio_web/app_bar/cu_app_bar.dart';
+import 'package:sergio_web/app_bar/cu_drawer_menu.dart';
+import 'package:sergio_web/app_bar/model/app_bar_action_model.dart';
+import 'package:sergio_web/common/widgets/cu_gradient_button.dart';
 import 'package:sergio_web/common/widgets/cu_reveal_animation.dart';
+import 'package:sergio_web/common/widgets/cu_transparent_button.dart';
 import 'package:sergio_web/contact/ui/contact_me_form.dart';
 import 'package:sergio_web/education/ui/education_form.dart';
 import 'package:sergio_web/experience/ui/experience_form.dart';
 import 'package:sergio_web/footer/ui/footer.dart';
 import 'package:sergio_web/profile/ui/profile_form.dart';
 import 'package:sergio_web/tech_stack/ui/tech_stack_form.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,6 +37,9 @@ class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey _experienceKey = GlobalKey();
   final GlobalKey _educationKey = GlobalKey();
   final GlobalKey _contactKey = GlobalKey();
+
+  /// double size to change the appBar
+  final double _appBarSize = 800.0;
 
   @override
   void initState() {
@@ -56,6 +65,10 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     const double spacing = 100;
+    final screenWidth = MediaQuery.of(context).size.width;
+    final isLargeScreen = screenWidth >= _appBarSize;
+    final strings = AppLocalizations.of(context)!;
+
     return Scaffold(
       body: NotificationListener<ScrollNotification>(
         onNotification: _handleScrollNotification,
@@ -63,7 +76,10 @@ class _HomeScreenState extends State<HomeScreen> {
           scrollDirection: Axis.vertical,
           controller: _scrollController,
           slivers: <Widget>[
-            CUAppBar(),
+            CUAppBar(
+              largeScreen: isLargeScreen,
+              actionItems: _mapItems(strings,false),
+            ),
             const SliverToBoxAdapter(
               child: SizedBox(height: spacing),
             ),
@@ -86,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RevealAnimator(
                     widgetKey: _aboutMeKey,
                     scrollStream: _scrollStreamController.stream,
-                    revealOffset: MediaQuery.of(context).size.height * 0.8,
+                    revealOffset: MediaQuery.of(context).size.height * 0.9,
                     child: AboutMeForm()),
               ),
             ),
@@ -100,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RevealAnimator(
                     widgetKey: _textStackKey,
                     scrollStream: _scrollStreamController.stream,
-                    revealOffset: MediaQuery.of(context).size.height * 0.8,
+                    revealOffset: MediaQuery.of(context).size.height * 0.9,
                     child: TextStackForm()),
               ),
             ),
@@ -114,7 +130,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RevealAnimator(
                     widgetKey: _experienceKey,
                     scrollStream: _scrollStreamController.stream,
-                    revealOffset: MediaQuery.of(context).size.height * 0.8,
+                    revealOffset: MediaQuery.of(context).size.height * 0.9,
                     child: ExperienceForm()),
               ),
             ),
@@ -128,7 +144,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RevealAnimator(
                     widgetKey: _educationKey,
                     scrollStream: _scrollStreamController.stream,
-                    revealOffset: MediaQuery.of(context).size.height * 0.8,
+                    revealOffset: MediaQuery.of(context).size.height * 0.9,
                     child: EducationForm()),
               ),
             ),
@@ -142,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: RevealAnimator(
                     widgetKey: _contactKey,
                     scrollStream: _scrollStreamController.stream,
-                    revealOffset: MediaQuery.of(context).size.height * 0.8,
+                    revealOffset: MediaQuery.of(context).size.height * 0.9,
                     child: ContactMeForm()),
               ),
             ),
@@ -155,6 +171,12 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
       ),
+      endDrawer: isLargeScreen
+          ? null
+          : CUDrawerMenu(
+              actions: _mapItems(strings, true),
+            ),
+      endDrawerEnableOpenDragGesture: !isLargeScreen,
     );
   }
 
@@ -174,7 +196,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     /// Get the scrollable render box
     final RenderBox scrollableRenderBox =
-        scrollableState.context.findRenderObject() as RenderBox;
+    scrollableState.context.findRenderObject() as RenderBox;
 
     /// Get global position in the scroll
     final Offset position = renderBox.localToGlobal(
@@ -182,11 +204,72 @@ class _HomeScreenState extends State<HomeScreen> {
       ancestor: scrollableRenderBox,
     );
 
+    /// calculate the offset
+    final double targetOffset = position.dy + _scrollController.offset;
+
     /// animate scroll
     _scrollController.animateTo(
-      position.dy,
+      targetOffset,
       duration: const Duration(milliseconds: 500),
       curve: Curves.easeInOut,
-    );
+    ).then((_){
+      SchedulerBinding.instance.addPostFrameCallback((_) {
+        debugPrint('loaded');
+      });
+    });
+  }
+
+  List<AppBarActionModel> _mapItems(AppLocalizations strings, bool withCloseDrawer) {
+    List<AppBarActionModel> items = [];
+    items.add(_buildBasicItem(
+        strings.profile_simple_title, () => _animateScroll(_profileKey),withCloseDrawer));
+    items.add(_buildBasicItem(
+        strings.about_me_title, () => _animateScroll(_aboutMeKey),withCloseDrawer));
+    items.add(_buildBasicItem(
+        strings.tech_stack_title, () => _animateScroll(_textStackKey),withCloseDrawer));
+    items.add(_buildBasicItem(
+        strings.simple_experience_title, () => _animateScroll(_experienceKey),withCloseDrawer));
+    items.add(_buildBasicItem(
+        strings.simple_education_title, () => _animateScroll(_educationKey),withCloseDrawer));
+    items.add(_buildButtonItem(
+        strings.simple_contact_title, () => _animateScroll(_contactKey),withCloseDrawer));
+    return items;
+  }
+
+  AppBarActionModel _buildBasicItem(String title, Function() onTap, bool withCloseDrawer) {
+    return AppBarActionModel(
+        title: title,
+        child: Builder(
+          builder: (innerContext) {
+            return CUTransparentButton(
+                onTap: (){
+                  onTap();
+                  if(withCloseDrawer){
+                    Scaffold.of(innerContext).closeEndDrawer();
+                  }
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: Text(title, style: Theme.of(context).textTheme.bodyMedium),
+                ));
+          }
+        ));
+  }
+
+  AppBarActionModel _buildButtonItem(String title, Function() onTap,bool withCloseDrawer) {
+    return AppBarActionModel(
+        title: title,
+        child: Builder(
+          builder: (innerContext) {
+            return Container(
+                constraints: BoxConstraints(maxWidth: 140),
+                child: CUGradientButton(callback: (){
+                  onTap();
+                  if(withCloseDrawer){
+                    Scaffold.of(innerContext).closeEndDrawer();
+                  }
+                }, title: title));
+          }
+        ));
   }
 }
