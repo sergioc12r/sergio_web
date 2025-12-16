@@ -16,7 +16,7 @@ class ContactMeInfo extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       spacing: 15,
       children: [
-        Text(strings.contact_info_title, style: textStyle.headlineSmall),
+        Text(strings.contact_info_title, style: textStyle.titleMedium),
         SizedBox(
             width: itemWidth < 300 ? screenWidth : itemWidth,
             child: CuBasicLeading(

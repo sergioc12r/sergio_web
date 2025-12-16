@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sergio_web/common/widgets/cu_chip.dart';
+import 'package:sergio_web/common/widgets/cu_title.dart';
 import 'package:sergio_web/common/widgets/glass_card.dart';
 import 'package:sergio_web/providers/providers.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -11,7 +12,6 @@ class TextStackForm extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final stack = ref.watch(techStackProvider);
-    final textStyle = Theme.of(context).textTheme;
     final strings = AppLocalizations.of(context)!;
 
     return LayoutBuilder(builder: (context, constraints) {
@@ -23,7 +23,7 @@ class TextStackForm extends ConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const SizedBox(height: 10),
-            Text(strings.tech_stack_title, style: textStyle.headlineMedium),
+            CUTitle(title: strings.tech_stack_title),
             Padding(
               padding:
                   EdgeInsets.symmetric(horizontal: constraints.maxWidth * 0.03),

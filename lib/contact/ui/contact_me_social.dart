@@ -18,7 +18,7 @@ class ContactMeSocial extends StatelessWidget {
       children: [
         Text(
           strings.contact_social_title,
-          style: textStyle.bodyMedium,
+          style: textStyle.titleMedium,
         ),
         Wrap(
           direction: Axis.horizontal,

@@ -23,7 +23,7 @@ class ContactMeForm extends StatelessWidget {
         spacing: 20,
         children: [
           Text(strings.contact_title, style: textStyle.headlineMedium),
-          Text(strings.contact_sub_title, style: textStyle.titleMedium),
+          Text(strings.contact_sub_title, style: textStyle.bodySmall),
           Wrap(
             spacing: spacing,
             runSpacing: spacing,

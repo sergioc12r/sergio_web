@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sergio_web/common/helpers/date_time_helper.dart';
+import 'package:sergio_web/common/widgets/cu_title.dart';
 import 'package:sergio_web/experience/ui/item/experience_item_widget.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:sergio_web/providers/providers.dart';
@@ -15,14 +16,13 @@ class ExperienceForm extends ConsumerWidget {
     final experiences = ref.watch(experienceProvider);
     return Column(
       children: [
-        Text(
-          local.experience_title,
-          style: textTheme.headlineMedium,
+        CUTitle(
+          title: local.experience_title,
         ),
         const SizedBox(height: 10),
         Text(
           local.experience_subtitle,
-          style: textTheme.titleMedium,
+          style: textTheme.bodySmall,
         ),
         const SizedBox(height: 60),
         ListView.builder(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:sergio_web/common/widgets/cu_title.dart';
 import 'package:sergio_web/education/ui/education_item_widget.dart';
 import 'package:sergio_web/providers/providers.dart';
 
@@ -14,14 +15,13 @@ class EducationForm extends ConsumerWidget {
     final textTheme = Theme.of(context).textTheme;
     return Column(
       children: [
-        Text(
-          strings.education_title,
-          style: textTheme.headlineMedium,
+        CUTitle(
+          title: strings.education_title,
         ),
         const SizedBox(height: 20),
         Text(
           strings.education_subtitle,
-          style: textTheme.titleMedium,
+          style: textTheme.bodySmall,
         ),
         const SizedBox(height: 40),
         Wrap(

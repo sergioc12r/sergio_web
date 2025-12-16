@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sergio_web/about_me/ui/relevant_item_card.dart';
 import 'package:sergio_web/common/data/utils_urls.dart';
 import 'package:sergio_web/common/widgets/cu_chip.dart';
+import 'package:sergio_web/common/widgets/cu_title.dart';
 import 'package:sergio_web/providers/providers.dart';
 
 class AboutMeForm extends ConsumerWidget {
@@ -39,7 +40,6 @@ class AboutMeForm extends ConsumerWidget {
         borderRadius: BorderRadius.circular(12),
       ),
       child: ClipRRect(
-        // <-- ¡Este es el truco!
         borderRadius: BorderRadius.circular(12),
         child: Image.network(
           data?.imageUrl ?? UtilsUrls.aboutImage,
@@ -71,17 +71,16 @@ class AboutMeForm extends ConsumerWidget {
     return Center(
       child: Container(
         padding: const EdgeInsets.all(40),
-        constraints: const BoxConstraints(maxWidth: 1200), // Max width para web
+        constraints: const BoxConstraints(maxWidth: 1200),
         child: Column(
           children: [
-            Text(
-              data?.title ?? '',
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+            CUTitle(
+              title: data?.title ?? '',
             ),
             const SizedBox(height: 8),
             Text(
               data?.subTitle ?? '',
-              style: TextStyle(fontSize: 18, color: Colors.grey),
+              style: Theme.of(context).textTheme.bodySmall
             ),
             const SizedBox(height: 40),
             mainLayout,
