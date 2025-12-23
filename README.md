@@ -31,17 +31,17 @@ Follow this steps to run in local:
       flutterfire configure
    ```
 
-3**Install Dependencies:**
+3. **Install Dependencies:**
    ```bash
    flutter pub get
    ```
 
-4**Enable Flutter Web (If you didn't):**
+4. **Enable Flutter Web (If you didn't):**
    ```bash
    flutter config --enable-web
    ```
 
-5**Run in debug mode:**
+5. **Run in debug mode:**
    ```bash
    flutter run -d chrome
    ```
