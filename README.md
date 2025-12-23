@@ -20,21 +20,28 @@ You can see the website live on: **[sergiocarodev.com]**
 
 ## 🛠️ Install and Config
 
-Sigue estos pasos para correr el proyecto localmente:
+Follow this steps to run in local:
 
 1. **Clone repository:**
 
-2. **Install Dependencies:**
+2. **Create file lib/firebase_options.dart to connect firebase keys or configure with firebase cloud console**
+   ```bash
+      firebase login
+      dart pub global activate flutterfire_cli
+      flutterfire configure
+   ```
+
+3**Install Dependencies:**
    ```bash
    flutter pub get
    ```
 
-3. **Enable Flutter Web (If you didn't):**
+4**Enable Flutter Web (If you didn't):**
    ```bash
    flutter config --enable-web
    ```
 
-4. **Run in debug mode:**
+5**Run in debug mode:**
    ```bash
    flutter run -d chrome
    ```

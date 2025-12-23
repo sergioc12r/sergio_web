@@ -1,4 +1,4 @@
-# Archivos y carpetas generados por Flutter/Dart
+# Flutter/Dart generated files and folders
 /build/
 /.dart_tool/
 /.packages
@@ -6,7 +6,10 @@
 /.flutter-plugins-dependencies
 /pubspec.lock
 
-# Archivos específicos de Android
+# Firebase configuration (Sensitive information)
+lib/firebase_options.dart
+
+# Android specific files
 .gradle/
 /android/local.properties
 /android/key.properties
@@ -14,7 +17,7 @@
 *.keystore
 *.jks
 
-# Archivos específicos de iOS
+# iOS specific files
 /ios/Flutter/Generated.xcconfig
 /ios/Flutter/flutter_export_environment.sh
 /ios/Runner/GeneratedPluginRegistrant.h
@@ -23,12 +26,12 @@
 /ios/.symlinks/
 /ios/Podfile.lock
 
-# Configuraciones de editores (VS Code, Android Studio)
+# IDE/Editor configurations (VS Code, Android Studio)
 .vscode/
 .idea/
 *.iml
 *.iws
 
-# Otros (Sistemas operativos y archivos temporales)
+# Others (OS generated and temporary files)
 .DS_Store
 Thumbs.db
