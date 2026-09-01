@@ -15,7 +15,7 @@ import 'package:sergio_web/experience/ui/experience_form.dart';
 import 'package:sergio_web/footer/ui/footer.dart';
 import 'package:sergio_web/profile/ui/profile_form.dart';
 import 'package:sergio_web/tech_stack/ui/tech_stack_form.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});

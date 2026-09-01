@@ -9,6 +9,10 @@
 # Firebase configuration (Sensitive information)
 lib/firebase_options.dart
 
+# Generated localization files (flutter gen-l10n)
+lib/l10n/app_localizations.dart
+lib/l10n/app_localizations_*.dart
+
 # Android specific files
 .gradle/
 /android/local.properties

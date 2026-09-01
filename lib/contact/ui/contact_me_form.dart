@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sergio_web/contact/ui/contact_me_info.dart';
 import 'package:sergio_web/contact/ui/contact_me_social.dart';
 import 'package:sergio_web/contact/ui/send_me_message_form.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/l10n/app_localizations.dart';
 
 class ContactMeForm extends StatelessWidget {
   const ContactMeForm({super.key});

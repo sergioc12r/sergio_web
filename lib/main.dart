@@ -4,7 +4,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:sergio_web/common/icons/cu_loading.dart';
 import 'package:sergio_web/common/styles/cu_theme.dart';
 import 'package:sergio_web/home/ui/screen/home_screen.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:sergio_web/providers/providers.dart';
 
@@ -26,8 +26,13 @@ class MyApp extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isInitialized = ref.watch(appConfigProvider);
-    FirebaseAnalytics analytics = FirebaseAnalytics.instance;
-    FirebaseAnalyticsObserver observer = FirebaseAnalyticsObserver(analytics: analytics);
+
+    /// Firebase isn't initialized until [appConfigProvider] finishes, so
+    /// only touch FirebaseAnalytics once that's true — otherwise the first
+    /// build (which runs before `Firebase.initializeApp` resolves) throws.
+    final List<NavigatorObserver> navigatorObservers = isInitialized
+        ? [FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance)]
+        : const <NavigatorObserver>[];
 
     return MaterialApp(
       title: 'sergiocarodev.com',
@@ -43,7 +48,7 @@ class MyApp extends ConsumerWidget {
       themeMode: ThemeMode.system,
       theme: CUThemeData.lightTheme,
       darkTheme: CUThemeData.darkTheme,
-      navigatorObservers: [observer],
+      navigatorObservers: navigatorObservers,
       home: isInitialized ? const HomeScreen() : const CULoading(),
     );
   }

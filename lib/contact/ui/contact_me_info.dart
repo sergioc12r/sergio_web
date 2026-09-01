@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sergio_web/common/utils/copy_clipboard_module.dart';
 import 'package:sergio_web/common/widgets/cu_basic_leading.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/l10n/app_localizations.dart';
 
 class ContactMeInfo extends StatelessWidget {
   const ContactMeInfo({super.key});

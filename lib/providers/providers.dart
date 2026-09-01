@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:sergio_web/about_me/model/about_me_model.dart';
 import 'package:sergio_web/about_me/ui/about_me_form_view_model.dart';
 import 'package:sergio_web/education/models/education.dart';
