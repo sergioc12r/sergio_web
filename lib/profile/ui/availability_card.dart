@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sergio_web/common/widgets/glass_card.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/l10n/app_localizations.dart';
 
 class AvailabilityCard extends StatelessWidget {
   const AvailabilityCard({super.key});

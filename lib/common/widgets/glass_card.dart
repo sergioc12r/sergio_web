@@ -47,12 +47,13 @@ class _GlassCardState extends State<GlassCard> {
         duration: widget.animationDuration,
         curve: Curves.easeInOut,
         transformAlignment: Alignment.center,
-        transform: Matrix4.identity()..scale(scale, scale),
+        transform: Matrix4.identity()..scaleByDouble(scale, scale, 1.0, 1.0),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(_radius),
           boxShadow: [
             BoxShadow(
-              color: styles.shadowColor!.withOpacity(_isHovering ? 0.4 : 0.2),
+              color: styles.shadowColor!
+                  .withValues(alpha: _isHovering ? 0.4 : 0.2),
               spreadRadius: 0.5,
               blurRadius: _isHovering ? 15 : 10,
               offset: Offset(0, _isHovering ? 6 : 4),
@@ -66,10 +67,10 @@ class _GlassCardState extends State<GlassCard> {
                 sigmaX: widget.blurAmount, sigmaY: widget.blurAmount),
             child: Container(
               decoration: BoxDecoration(
-                color: styles.color!.withOpacity(0.5),
+                color: styles.color!.withValues(alpha: 0.5),
                 borderRadius: BorderRadius.circular(_radius),
                 border: Border.all(
-                  color: styles.shadowColor!.withOpacity(0.9),
+                  color: styles.shadowColor!.withValues(alpha: 0.9),
                   width: 1.2,
                 ),
               ),

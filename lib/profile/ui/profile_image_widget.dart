@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sergio_web/common/data/utils_urls.dart';
 import 'package:sergio_web/profile/ui/profile_kpi_card.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/l10n/app_localizations.dart';
 
 class ProfileImageWidget extends StatelessWidget {
   const ProfileImageWidget({super.key});

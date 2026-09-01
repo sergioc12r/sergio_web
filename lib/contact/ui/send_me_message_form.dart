@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/l10n/app_localizations.dart';
 import 'package:sergio_web/common/firestore/firestore_module.dart';
 import 'package:sergio_web/common/widgets/cu_gradient_button.dart';
 import 'package:sergio_web/common/widgets/glass_card.dart';
@@ -133,7 +133,7 @@ class _SendMeMessageFormState extends State<SendMeMessageForm> {
 
   Widget _buildFormField({
     required TextTheme textStyle,
-    required InputDecorationTheme fieldStyle,
+    required InputDecorationThemeData fieldStyle,
     required String label,
     required String hint,
     required TextEditingController controller,

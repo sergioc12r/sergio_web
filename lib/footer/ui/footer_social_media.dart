@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sergio_web/common/data/utils_urls.dart';
 import 'package:sergio_web/common/icons/cu_icons.dart';
 import 'package:sergio_web/common/social_media/social_media_item.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/l10n/app_localizations.dart';
 
 class FlutterSocialMedia extends StatelessWidget {
   const FlutterSocialMedia({super.key});

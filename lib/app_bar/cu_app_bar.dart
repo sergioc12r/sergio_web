@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/l10n/app_localizations.dart';
 import 'package:sergio_web/app_bar/model/app_bar_action_model.dart';
 
 /// Custom App Bar with [SliverAppBar] form

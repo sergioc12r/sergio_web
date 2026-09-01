@@ -3,7 +3,7 @@ import 'package:sergio_web/common/widgets/glass_card.dart';
 import 'package:sergio_web/experience/model/experience_model.dart';
 import 'package:sergio_web/experience/ui/item/experience_activity_widget.dart';
 import 'package:sergio_web/experience/ui/item/experience_skills_widget.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/l10n/app_localizations.dart';
 
 class ExperienceItemWidget extends StatelessWidget {
   const ExperienceItemWidget(
