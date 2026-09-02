@@ -8,7 +8,6 @@
   "email" : "sergio951112@gmail.com",
   "location" : "Bogotá - Colombia",
   "copy_clipboard_message" : "Copied to clipboard",
-  "send_message" : "Message sent successfully",
 
   "profile_experience_title" : "+6",
   "profile_experience_subtitle" : "Experience years",
@@ -45,18 +44,5 @@
   "contact_info_title" : "Contact Information",
   "contact_info_email" : "Email",
   "contact_info_location" : "Location",
-  "contact_form_title" : "Send me a message",
-  "contact_form_name_label" : "Name *",
-  "contact_form_name_place_holder" : "Your name",
-  "contact_form_email_label" : "Email *",
-  "contact_form_email_place_holder" : "your@email.com *",
-  "contact_form_subject_label" : "Subject *",
-  "contact_form_subject_place_holder" : "How can I help you?",
-  "contact_form_subject_body_label" : "Message *",
-  "contact_form_subject_body_place_holder" : "Tell me about your project ...",
-  "contact_form_send_button_label" : "Send Message",
-  "contact_social_title" : "Follow me on: ",
-  "contact_validator" : "Required field.",
-  "contact_email_validator" : "Invalid email.",
-  "contact_email_empty_validator" : "Required email."
+  "contact_social_title" : "Follow me on: "
 }

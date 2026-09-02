@@ -36,6 +36,9 @@ lib/l10n/app_localizations_*.dart
 *.iml
 *.iws
 
+# Claude Code agent memory (local working notes, not project docs)
+.claude/agent-memory-local/
+
 # Others (OS generated and temporary files)
 .DS_Store
 Thumbs.db

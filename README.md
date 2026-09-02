@@ -10,11 +10,11 @@ You can see the website live on: **[sergiocarodev.com]**
 
 ## ✨ Characteristics
 
-* ️ **Flutter Version:** 3.27.1
+* ️ **Flutter Version:** 3.47.1
 * ⚡ **Fast Render:** OnePage application with smooth animations.
 * 📱 **Responsive:** Responsive for desktop, mobile and tablets.
 * 🎨 **UI/UX:** Using Material Design.
-* 🛠️ **State Management:** Uses provider as state manager and read info from json data.
+* 🛠️ **State Management:** Uses Riverpod as state manager and reads content from json data.
 
 ---
 
@@ -24,8 +24,12 @@ Follow this steps to run in local:
 
 1. **Clone repository:**
 
-2. **Create file lib/firebase_options.dart to connect firebase keys or configure with firebase cloud console**
+2. **Create file lib/firebase_options.dart to connect firebase keys or configure with firebase cloud
+   console**
    ```bash
+      # If you don't have the Firebase CLI installed yet:
+      npm install -g firebase-tools
+
       firebase login
       dart pub global activate flutterfire_cli
       flutterfire configure

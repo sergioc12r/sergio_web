@@ -1,21 +1,41 @@
 import 'package:flutter/material.dart';
+import 'package:sergio_web/common/styles/cu_spacing.dart';
+import 'package:sergio_web/common/styles/theme_colors.dart';
 
+/// Cards in this system are not floating objects: they are regions bounded by
+/// a hairline. Elevation 0, radius 0, one 1px rule.
 class CUCardTheme {
-  static const cardShape = RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(Radius.circular(12.0)),
+  const CUCardTheme._();
+
+  static const RoundedRectangleBorder _lightShape = RoundedRectangleBorder(
+    borderRadius: BorderRadius.zero,
+    side: BorderSide(
+      width: CUSpacing.hairline,
+      color: CUThemeColors.lightBorder,
+    ),
   );
 
-  static CardThemeData lightCardTheme = CardThemeData(
-    color: Colors.white,
-    elevation: 4.0,
-    shape: cardShape,
-    shadowColor: Color(0x4186B1FF),
+  static const RoundedRectangleBorder _darkShape = RoundedRectangleBorder(
+    borderRadius: BorderRadius.zero,
+    side: BorderSide(
+      width: CUSpacing.hairline,
+      color: CUThemeColors.darkBorder,
+    ),
   );
 
-  static CardThemeData darkCardTheme = CardThemeData(
-    color: Color(0xFF000B20),
-    elevation: 5.0,
-    shape: cardShape,
-    shadowColor: Color(0x17D8DFF6),
+  static const CardThemeData lightCardTheme = CardThemeData(
+    color: CUThemeColors.lightBgAlt,
+    surfaceTintColor: CUThemeColors.lightBgAlt,
+    elevation: 0,
+    margin: EdgeInsets.zero,
+    shape: _lightShape,
+  );
+
+  static const CardThemeData darkCardTheme = CardThemeData(
+    color: CUThemeColors.darkBgAlt,
+    surfaceTintColor: CUThemeColors.darkBgAlt,
+    elevation: 0,
+    margin: EdgeInsets.zero,
+    shape: _darkShape,
   );
 }
