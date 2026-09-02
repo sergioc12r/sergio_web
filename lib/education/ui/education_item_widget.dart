@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:sergio_web/common/widgets/cu_icon_container.dart';
-import 'package:sergio_web/common/widgets/glass_card.dart';
+import 'package:sergio_web/common/styles/cu_spacing.dart';
+import 'package:sergio_web/common/styles/cu_text_styles.dart';
+import 'package:sergio_web/common/widgets/cu_timeline_row.dart';
 import 'package:sergio_web/education/models/education.dart';
-import 'package:sergio_web/education/ui/education_date_widget.dart';
 
+/// One qualification.
+///
+/// This section used to be a wrapped grid of glass cards with gradient icon
+/// tiles — a completely different object from the experience list next to it,
+/// despite holding the same kind of information. It now uses the very same
+/// [CUTimelineRow], so the two sections read as one continuous record.
 class EducationItemWidget extends StatelessWidget {
   const EducationItemWidget({super.key, required this.education});
 
@@ -11,46 +17,29 @@ class EducationItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-    final screenWidth = MediaQuery.of(context).size.width;
+    final theme = Theme.of(context);
+    final colors = theme.colorScheme;
 
-    final itemWidth = (screenWidth - 40 * 3) / 2;
-    return SizedBox(
-      width: itemWidth < 300 ? screenWidth : itemWidth,
-      child: GlassCard(
-          child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            CuIconContainer(
-              iconData: education.iconData,
-              gradient: education.isDegree
-                  ? null
-                  : LinearGradient(colors: [
-                      Color(0x3D99A7F6),
-                      Color(0x3D99A7F6),
-                    ]),
-              iconColor: education.isDegree ? null : Colors.blue,
+    return CUTimelineRow(
+      date: education.finishDate.year.toString(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Text(education.title, style: theme.textTheme.titleLarge),
+          const SizedBox(height: CUSpacing.s4),
+          Text(
+            education.place.toUpperCase(),
+            style: CUTextStyles.monoLabel.copyWith(
+              color: colors.onSurfaceVariant,
             ),
-            const SizedBox(width: 30),
-            Flexible(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 5,
-                children: [
-                  EducationDateWidget(
-                      text: education.finishDate.year.toString()),
-                  Text(education.title, style: textTheme.titleMedium),
-                  Text(education.place, style: textTheme.bodyMedium),
-                ],
-              ),
-            )
+          ),
+          if (education.description.isNotEmpty) ...<Widget>[
+            const SizedBox(height: CUSpacing.s16),
+            Text(education.description, style: theme.textTheme.bodyMedium),
           ],
-        ),
-      )),
+        ],
+      ),
     );
   }
 }

@@ -7,6 +7,12 @@ class UtilsUrls {
   static const _aboutImage =
       "https://raw.githubusercontent.com/sergioc12r/assets/refs/heads/main/about.jpg";
 
+  /// Const aliases. The getters below cannot be used inside a `const` list,
+  /// which the redesigned link lists are built from.
+  static const String instagramUrl = _instagram;
+  static const String githubUrl = _github;
+  static const String linkedinUrl = _linkedin;
+
   static String get instagram => _instagram;
 
   static String get github => _github;

@@ -44,10 +44,7 @@ class MyApp extends ConsumerWidget {
         GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      ///TODO manage theme later
-      themeMode: ThemeMode.system,
       theme: CUThemeData.lightTheme,
-      darkTheme: CUThemeData.darkTheme,
       navigatorObservers: navigatorObservers,
       home: isInitialized ? const HomeScreen() : const CULoading(),
     );
