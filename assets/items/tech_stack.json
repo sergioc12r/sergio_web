@@ -2,79 +2,98 @@
   "data": [
     {
       "name": "Flutter",
-      "icon_url": "https://api.iconify.design/logos/flutter.svg"
+      "icon_url": "https://api.iconify.design/logos/flutter.svg",
+      "category": "mobile"
     },
     {
       "name": "Dart",
-      "icon_url": "https://api.iconify.design/logos/dart.svg"
+      "icon_url": "https://api.iconify.design/logos/dart.svg",
+      "category": "lenguajes"
     },
     {
       "name": "Android",
-      "icon_url": "https://api.iconify.design/logos/android-icon.svg"
+      "icon_url": "https://api.iconify.design/logos/android-icon.svg",
+      "category": "mobile"
     },
     {
       "name": "iOS",
-      "icon_url": "https://api.iconify.design/logos/apple.svg"
+      "icon_url": "https://api.iconify.design/logos/apple.svg",
+      "category": "mobile"
     },
     {
       "name": "Firebase",
-      "icon_url": "https://api.iconify.design/material-icon-theme/firebase.svg"
+      "icon_url": "https://api.iconify.design/material-icon-theme/firebase.svg",
+      "category": "backend"
     },
     {
       "name": "Rest API",
-      "icon_url": "https://api.iconify.design/ic/sharp-api.svg"
+      "icon_url": "https://api.iconify.design/ic/sharp-api.svg",
+      "category": "backend"
     },
     {
       "name": "Android Studio",
-      "icon_url": "https://api.iconify.design/devicon/androidstudio.svg"
+      "icon_url": "https://api.iconify.design/devicon/androidstudio.svg",
+      "category": "herramientas"
     },
     {
       "name": "XCode",
-      "icon_url": "https://api.iconify.design/logos/xcode.svg"
+      "icon_url": "https://api.iconify.design/logos/xcode.svg",
+      "category": "herramientas"
     },
     {
       "name": "Git",
-      "icon_url": "https://api.iconify.design/logos/git-icon.svg"
+      "icon_url": "https://api.iconify.design/logos/git-icon.svg",
+      "category": "herramientas"
     },
     {
       "name": "Flutter BLOC",
-      "icon_url": "https://api.iconify.design/material-icon-theme/3d.svg"
+      "icon_url": "https://api.iconify.design/material-icon-theme/3d.svg",
+      "category": "mobile"
     },
     {
       "name": "Figma",
-      "icon_url": "https://api.iconify.design/logos/figma.svg"
+      "icon_url": "https://api.iconify.design/logos/figma.svg",
+      "category": "herramientas"
     },
     {
       "name": "Provider",
-      "icon_url": "https://api.iconify.design/logos/flutter.svg"
+      "icon_url": "https://api.iconify.design/logos/flutter.svg",
+      "category": "mobile"
     },
     {
       "name": "GetX",
-      "icon_url": "https://api.iconify.design/logos/dart.svg"
+      "icon_url": "https://api.iconify.design/logos/dart.svg",
+      "category": "mobile"
     },
     {
       "name": "Azure Pipelines",
-      "icon_url": "https://api.iconify.design/material-icon-theme/azure-pipelines.svg"
+      "icon_url": "https://api.iconify.design/material-icon-theme/azure-pipelines.svg",
+      "category": "backend"
     },
     {
       "name": "CI/CD",
-      "icon_url": "https://api.iconify.design/la/cloud-upload-alt.svg"
+      "icon_url": "https://api.iconify.design/la/cloud-upload-alt.svg",
+      "category": "backend"
     },
     {
       "name": "Clean Architecture",
-      "icon_url": "https://api.iconify.design/material-icon-theme/folder-archive.svg"
+      "icon_url": "https://api.iconify.design/material-icon-theme/folder-archive.svg",
+      "category": "mobile"
     },
     {
       "name": "Null safety",
-      "icon_url": "https://api.iconify.design/mdi/safety-goggles.svg"
+      "icon_url": "https://api.iconify.design/mdi/safety-goggles.svg",
+      "category": "lenguajes"
     },
     {
       "name": "Kotlin",
-      "icon_url": "https://api.iconify.design/logos/kotlin-icon.svg"
+      "icon_url": "https://api.iconify.design/logos/kotlin-icon.svg",
+      "category": "lenguajes"
     },
     {
       "name": "Java",
-      "icon_url": "https://api.iconify.design/logos/java.svg"
+      "icon_url": "https://api.iconify.design/logos/java.svg",
+      "category": "lenguajes"
     }
   ]
 }

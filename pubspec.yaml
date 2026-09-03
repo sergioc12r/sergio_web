@@ -39,7 +39,6 @@ dependencies:
   lottie: 3.5.1
   url_launcher: 6.3.2
   firebase_core: 4.14.0
-  cloud_firestore: 6.9.0
 
   flutter_localizations:
     sdk: flutter
@@ -77,13 +76,26 @@ flutter:
     - assets/items/es/
 
   fonts:
-    - family: Roboto
+    - family: Manrope
       fonts:
-        - asset: assets/fonts/roboto/roboto_bold.ttf
-        - asset: assets/fonts/roboto/roboto_light.ttf
-        - asset: assets/fonts/roboto/roboto_medium.ttf
-        - asset: assets/fonts/roboto/roboto_regular.ttf
-        - asset: assets/fonts/roboto/roboto_semi_bold.ttf
+        - asset: assets/fonts/manrope/manrope_400.ttf
+          weight: 400
+        - asset: assets/fonts/manrope/manrope_500.ttf
+          weight: 500
+        - asset: assets/fonts/manrope/manrope_600.ttf
+          weight: 600
+        - asset: assets/fonts/manrope/manrope_700.ttf
+          weight: 700
+        - asset: assets/fonts/manrope/manrope_800.ttf
+          weight: 800
+    - family: IBMPlexMono
+      fonts:
+        - asset: assets/fonts/ibm_plex_mono/ibm_plex_mono_400.ttf
+          weight: 400
+        - asset: assets/fonts/ibm_plex_mono/ibm_plex_mono_500.ttf
+          weight: 500
+        - asset: assets/fonts/ibm_plex_mono/ibm_plex_mono_600.ttf
+          weight: 600
 
   # To add assets to your application, add an assets section, like this:
   # assets:

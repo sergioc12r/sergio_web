@@ -5,18 +5,30 @@ import 'package:sergio_web/common/styles/cu_card_theme.dart';
 import 'package:sergio_web/common/styles/cu_chip_theme.dart';
 import 'package:sergio_web/common/styles/cu_field_theme.dart';
 import 'package:sergio_web/common/styles/cu_icon_theme.dart';
+import 'package:sergio_web/common/styles/cu_spacing.dart';
 import 'package:sergio_web/common/styles/cu_text_styles.dart';
 import 'package:sergio_web/common/styles/theme_colors.dart';
 
 /// Manage Custom Theme
 class CUThemeData {
+  const CUThemeData._();
+
+  static DividerThemeData _divider(Color color) => DividerThemeData(
+    color: color,
+    thickness: CUSpacing.hairline,
+    space: CUSpacing.hairline,
+  );
+
   static ThemeData lightTheme = ThemeData(
     fontFamily: CUTextStyles.fontFamily,
     useMaterial3: true,
     brightness: Brightness.light,
     textTheme: CUTextStyles.lightTheme,
-    canvasColor: CUThemeColors.lightCanvasColor,
-    cardColor: CUThemeColors.lightCardColor,
+    scaffoldBackgroundColor: CUThemeColors.lightBg,
+    canvasColor: CUThemeColors.lightBg,
+    cardColor: CUThemeColors.lightBgAlt,
+    dividerColor: CUThemeColors.lightBorder,
+    dividerTheme: _divider(CUThemeColors.lightBorder),
     cardTheme: CUCardTheme.lightCardTheme,
     appBarTheme: CUAppBarTheme.lightAppBarTheme,
     chipTheme: CUChipTheme.lightChipTheme,
@@ -25,6 +37,14 @@ class CUThemeData {
     elevatedButtonTheme: CUButtonTheme.lightElevatedButtonTheme,
     iconButtonTheme: CUButtonTheme.lightIconButtonTheme,
     iconTheme: CUIconTheme.lightIconTheme,
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: CUThemeColors.lightBg,
+      surfaceTintColor: CUThemeColors.lightBg,
+      elevation: 0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+    ),
+    splashFactory: NoSplash.splashFactory,
+    highlightColor: Colors.transparent,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -32,8 +52,11 @@ class CUThemeData {
     useMaterial3: true,
     brightness: Brightness.dark,
     textTheme: CUTextStyles.darkTheme,
-    canvasColor: CUThemeColors.darkCanvasColor,
-    cardColor: CUThemeColors.darkCardColor,
+    scaffoldBackgroundColor: CUThemeColors.darkBg,
+    canvasColor: CUThemeColors.darkBg,
+    cardColor: CUThemeColors.darkBgAlt,
+    dividerColor: CUThemeColors.darkBorder,
+    dividerTheme: _divider(CUThemeColors.darkBorder),
     cardTheme: CUCardTheme.darkCardTheme,
     appBarTheme: CUAppBarTheme.darkAppBarTheme,
     chipTheme: CUChipTheme.darkChipTheme,
@@ -42,5 +65,13 @@ class CUThemeData {
     elevatedButtonTheme: CUButtonTheme.darkElevatedButtonTheme,
     iconButtonTheme: CUButtonTheme.darkIconButtonTheme,
     iconTheme: CUIconTheme.darkIconTheme,
+    drawerTheme: const DrawerThemeData(
+      backgroundColor: CUThemeColors.darkBg,
+      surfaceTintColor: CUThemeColors.darkBg,
+      elevation: 0,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.zero),
+    ),
+    splashFactory: NoSplash.splashFactory,
+    highlightColor: Colors.transparent,
   );
 }

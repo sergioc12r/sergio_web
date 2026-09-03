@@ -1,43 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:sergio_web/common/data/utils_urls.dart';
-import 'package:sergio_web/common/icons/cu_icons.dart';
-import 'package:sergio_web/common/social_media/social_media_item.dart';
-import 'package:sergio_web/l10n/app_localizations.dart';
+import 'package:sergio_web/common/styles/cu_spacing.dart';
+import 'package:sergio_web/common/styles/cu_text_styles.dart';
+import 'package:sergio_web/common/utils/url_luncher_module.dart';
+import 'package:sergio_web/common/widgets/cu_text_link.dart';
 
+/// Social links in the footer, as a wrapping row of mono text links.
+///
+/// The SVG marks are gone here for the same reason they are gone in the
+/// contact section: at footer scale a name is more legible than a glyph, and
+/// it keeps the whole footer to one typographic register.
 class FlutterSocialMedia extends StatelessWidget {
   const FlutterSocialMedia({super.key});
 
+  static const List<({String label, String url})> _networks =
+      <({String label, String url})>[
+        (label: 'LinkedIn', url: UtilsUrls.linkedinUrl),
+        (label: 'GitHub', url: UtilsUrls.githubUrl),
+        (label: 'Instagram', url: UtilsUrls.instagramUrl),
+      ];
+
   @override
   Widget build(BuildContext context) {
-    final strings = AppLocalizations.of(context)!;
-    final style = Theme.of(context).textTheme;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      spacing: 10,
-      children: [
-        Text(strings.footer_social_title, style: style.bodySmall),
-        Wrap(
-          direction: Axis.horizontal,
-          spacing: 10,
-          runSpacing: 10,
-          children: [
-            SocialMediaItem(
-                path: CUIcons.linkedin,
-                size: 20,
-                url: UtilsUrls.linkedin,
-            ),
-            SocialMediaItem(
-                path: CUIcons.instagram,
-                size: 20,
-                url: UtilsUrls.instagram,
-            ),
-            SocialMediaItem(
-                path: CUIcons.github,
-                size: 20,
-                url: UtilsUrls.github,
-            ),
-          ],
-        ),
+    return Wrap(
+      spacing: CUSpacing.s24,
+      runSpacing: CUSpacing.s4,
+      children: <Widget>[
+        for (final ({String label, String url}) network in _networks)
+          CUTextLink(
+            label: network.label,
+            style: CUTextStyles.monoTag,
+            onTap: () => UrlLauncherModule.launchSimpleUrl(network.url),
+          ),
       ],
     );
   }

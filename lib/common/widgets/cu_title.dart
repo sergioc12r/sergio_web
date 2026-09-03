@@ -1,48 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:sergio_web/common/styles/theme_colors.dart';
 
+/// A section H2.
+///
+/// The previous version painted the last word of the title in the primary
+/// color. That is gone on purpose: in this system hierarchy comes from size,
+/// weight and position, and coloring a single word inside a phrase is exactly
+/// the tic the redesign is meant to remove. Left-aligned, because the whole
+/// page reads as a document column.
 class CUTitle extends StatelessWidget {
-  const CUTitle({super.key, required this.title});
+  const CUTitle({super.key, required this.title, this.textAlign});
 
   final String title;
+  final TextAlign? textAlign;
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = Theme.of(context).textTheme;
-    return Center(
-      child: buildSeparatedText(
-        fullText: title,
-        baseStyle: textStyle.headlineLarge!,
-        lastWordStyle: textStyle.headlineLarge!.copyWith(color: CUThemeColors.primaryLight),
-      ),
-    );
-  }
-
-  Widget buildSeparatedText({
-    required String fullText,
-    required TextStyle baseStyle,
-    required TextStyle lastWordStyle,
-  }) {
-    int lastSpaceIndex = fullText.lastIndexOf(' ');
-
-    if (lastSpaceIndex == -1) {
-      return Text(fullText, style: baseStyle);
-    }
-
-    String baseText = fullText.substring(0, lastSpaceIndex);
-    String lastWord = fullText.substring(lastSpaceIndex);
-
-    return RichText(
-      text: TextSpan(
-        style: baseStyle,
-        children: <TextSpan>[
-          TextSpan(text: baseText),
-          TextSpan(
-            text: lastWord,
-            style: lastWordStyle,
-          ),
-        ],
-      ),
+    return Text(
+      title,
+      textAlign: textAlign ?? TextAlign.start,
+      style: Theme.of(context).textTheme.headlineMedium,
     );
   }
 }
