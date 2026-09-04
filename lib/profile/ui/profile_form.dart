@@ -36,9 +36,7 @@ class ProfileForm extends StatelessWidget {
         return Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Expanded(
-              child: ProfileInfoPart(scrollToContact: scrollToContact),
-            ),
+            Expanded(child: ProfileInfoPart(scrollToContact: scrollToContact)),
             const SizedBox(width: CUSpacing.s64),
             const SizedBox(
               width: CUSizing.narrowColumn,

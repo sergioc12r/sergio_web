@@ -31,9 +31,7 @@ class CUAppBar extends StatelessWidget {
       if (largeScreen)
         for (final AppBarActionModel item in actionItems) item.child
       else
-        DrawerButton(
-          onPressed: () => Scaffold.of(context).openEndDrawer(),
-        ),
+        DrawerButton(onPressed: () => Scaffold.of(context).openEndDrawer()),
       const SizedBox(width: CUSpacing.sectionHorizontalMobile),
     ];
 

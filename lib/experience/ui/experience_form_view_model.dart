@@ -15,8 +15,9 @@ class ExperienceFormViewModel extends StateNotifier<List<ExperienceModel>> {
   }
 
   Future<List<ExperienceModel>> _loadData(Locale? locale) async {
-    final rawJsonData =
-        DataResources.getExperience(locale: locale?.languageCode ?? 'es');
+    final rawJsonData = DataResources.getExperience(
+      locale: locale?.languageCode ?? 'es',
+    );
     final jsonString = await rootBundle.loadString(rawJsonData);
     final decodedData = json.decode(jsonString);
 

@@ -36,9 +36,7 @@ class CUTimelineRow extends StatelessWidget {
       children: <Widget>[
         Text(
           date.toUpperCase(),
-          style: CUTextStyles.monoMeta.copyWith(
-            color: colors.onSurfaceVariant,
-          ),
+          style: CUTextStyles.monoMeta.copyWith(color: colors.onSurfaceVariant),
         ),
         if (badge != null) ...<Widget>[
           const SizedBox(height: CUSpacing.s4),
@@ -74,10 +72,7 @@ class CUTimelineRow extends StatelessWidget {
             return Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                SizedBox(
-                  width: CUSizing.timelineDateColumn,
-                  child: dateBlock,
-                ),
+                SizedBox(width: CUSizing.timelineDateColumn, child: dateBlock),
                 const SizedBox(width: CUSpacing.s40),
                 Expanded(child: child),
               ],

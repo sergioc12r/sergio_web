@@ -30,10 +30,7 @@ class Footer extends StatelessWidget {
           decoration: BoxDecoration(
             color: colors.surface,
             border: Border(
-              top: BorderSide(
-                width: CUSpacing.hairline,
-                color: colors.outline,
-              ),
+              top: BorderSide(width: CUSpacing.hairline, color: colors.outline),
             ),
           ),
           child: Padding(

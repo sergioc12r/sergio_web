@@ -60,9 +60,7 @@ class _CUTextLinkState extends State<CUTextLink> {
           behavior: HitTestBehavior.opaque,
           onTap: widget.onTap,
           child: ConstrainedBox(
-            constraints: const BoxConstraints(
-              minHeight: CUSizing.minTapTarget,
-            ),
+            constraints: const BoxConstraints(minHeight: CUSizing.minTapTarget),
             child: Align(
               alignment: AlignmentDirectional.centerStart,
               widthFactor: 1,

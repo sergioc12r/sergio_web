@@ -15,8 +15,9 @@ class AboutMeFormViewModel extends StateNotifier<AboutMeModel?> {
   }
 
   Future<AboutMeModel?> _loadData(Locale? locale) async {
-    final rawJsonData =
-        DataResources.getAboutMeData(locale: locale?.languageCode ?? 'es');
+    final rawJsonData = DataResources.getAboutMeData(
+      locale: locale?.languageCode ?? 'es',
+    );
     final jsonString = await rootBundle.loadString(rawJsonData);
     final decodedData = json.decode(jsonString);
 

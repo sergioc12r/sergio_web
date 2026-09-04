@@ -38,11 +38,46 @@
 
   "tech_stack_title" : "Tech Stack",
 
+  "projects_title" : "Projects",
+  "simple_projects_title" : "Projects",
+
   "contact_title" : "Do you have a project?",
   "simple_contact_title" : "Contact",
   "contact_sub_title" : "I'm available for freelance projects and collaborations. Let's talk!",
   "contact_info_title" : "Contact Information",
   "contact_info_email" : "Email",
   "contact_info_location" : "Location",
-  "contact_social_title" : "Follow me on: "
+  "contact_social_title" : "Follow me on: ",
+
+  "legal_privacy_policy_link" : "Privacy policy",
+  "legal_back_link" : "← Back to site",
+  "legal_project_not_found" : "Requested project not found.",
+  "legal_privacy_policy_eyebrow" : "Legal",
+  "legal_privacy_policy_title" : "Privacy Policy",
+  "legal_last_updated" : "Last updated: pending publication",
+
+  "legal_section_data_title" : "Information we collect",
+  "legal_section_data_body" : "{title} may collect certain information to operate. The specific details of what data is collected have not been documented yet.",
+  "@legal_section_data_body" : {
+    "placeholders" : { "title" : { "type" : "String" } }
+  },
+  "legal_section_data_placeholder" : "[Fill in: specific list of data {title} collects — e.g. location, account data, in-app usage.]",
+  "@legal_section_data_placeholder" : {
+    "placeholders" : { "title" : { "type" : "String" } }
+  },
+
+  "legal_section_use_title" : "How we use it",
+  "legal_section_use_body" : "The information collected is used to operate and improve the app.",
+  "legal_section_use_placeholder" : "[Fill in: what each piece of data is specifically used for — functionality, analytics, communication, etc.]",
+
+  "legal_section_storage_title" : "Storage and security",
+  "legal_section_storage_body" : "Reasonable measures are taken to protect stored information.",
+  "legal_section_storage_placeholder" : "[Fill in: where data is stored, for how long, and what security measures apply.]",
+
+  "legal_section_third_parties_title" : "Third-party services",
+  "legal_section_third_parties_body" : "The app may use third-party services that collect information on their own.",
+  "legal_section_third_parties_placeholder" : "[Fill in: list of third-party SDKs/services used — e.g. Firebase Analytics, Firebase Crashlytics, maps, etc.]",
+
+  "legal_section_contact_title" : "Contact",
+  "legal_section_contact_body" : "For questions about this privacy policy, reach out to:"
 }

@@ -35,10 +35,7 @@ class CUFramedImage extends StatelessWidget {
       aspectRatio: aspectRatio,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          border: Border.all(
-            width: CUSpacing.hairline,
-            color: colors.outline,
-          ),
+          border: Border.all(width: CUSpacing.hairline, color: colors.outline),
         ),
         child: url.isEmpty
             ? placeholder

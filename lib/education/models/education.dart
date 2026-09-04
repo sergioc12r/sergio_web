@@ -30,12 +30,13 @@ class Education {
 
   bool get isDegree => educationType == EducationType.degree;
 
-  Education(
-      {required this.title,
-      required this.place,
-      required this.description,
-      required this.educationType,
-      required this.finishDate});
+  Education({
+    required this.title,
+    required this.place,
+    required this.description,
+    required this.educationType,
+    required this.finishDate,
+  });
 }
 
 enum EducationType { degree, shortCourse, largeCourse }

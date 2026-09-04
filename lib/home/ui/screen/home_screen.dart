@@ -17,6 +17,7 @@ import 'package:sergio_web/experience/ui/experience_form.dart';
 import 'package:sergio_web/footer/ui/footer.dart';
 import 'package:sergio_web/l10n/app_localizations.dart';
 import 'package:sergio_web/profile/ui/profile_form.dart';
+import 'package:sergio_web/projects/ui/projects_form.dart';
 import 'package:sergio_web/tech_stack/ui/tech_stack_form.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -42,6 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final GlobalKey _profileKey = GlobalKey();
   final GlobalKey _aboutMeKey = GlobalKey();
   final GlobalKey _textStackKey = GlobalKey();
+  final GlobalKey _projectsKey = GlobalKey();
   final GlobalKey _experienceKey = GlobalKey();
   final GlobalKey _educationKey = GlobalKey();
   final GlobalKey _contactKey = GlobalKey();
@@ -135,13 +137,24 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
 
             _Section(
+              sectionKey: _projectsKey,
+              horizontalPadding: horizontalPadding,
+              child: RevealAnimator(
+                widgetKey: _projectsKey,
+                scrollStream: _scrollStreamController.stream,
+                revealOffset: revealOffset,
+                child: const ProjectsForm(index: '03'),
+              ),
+            ),
+
+            _Section(
               sectionKey: _experienceKey,
               horizontalPadding: horizontalPadding,
               child: RevealAnimator(
                 widgetKey: _experienceKey,
                 scrollStream: _scrollStreamController.stream,
                 revealOffset: revealOffset,
-                child: const ExperienceForm(index: '03'),
+                child: const ExperienceForm(index: '04'),
               ),
             ),
 
@@ -152,7 +165,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 widgetKey: _educationKey,
                 scrollStream: _scrollStreamController.stream,
                 revealOffset: revealOffset,
-                child: const EducationForm(index: '04'),
+                child: const EducationForm(index: '05'),
               ),
             ),
 
@@ -163,7 +176,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 widgetKey: _contactKey,
                 scrollStream: _scrollStreamController.stream,
                 revealOffset: revealOffset,
-                child: const ContactMeForm(index: '05'),
+                child: const ContactMeForm(index: '06'),
               ),
             ),
 
@@ -223,6 +236,11 @@ class _HomeScreenState extends State<HomeScreen> {
       _buildItem(
         strings.tech_stack_title,
         () => _animateScroll(_textStackKey),
+        withCloseDrawer,
+      ),
+      _buildItem(
+        strings.simple_projects_title,
+        () => _animateScroll(_projectsKey),
         withCloseDrawer,
       ),
       _buildItem(
