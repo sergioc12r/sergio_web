@@ -8,30 +8,32 @@ class ExperienceModel {
   final List<ExperienceSkillModel>? skills;
   final List<ExperienceActivitiesModel>? activities;
 
-  ExperienceModel(
-      {required this.title,
-      required this.company,
-      required this.description,
-      required this.isCurrent,
-      required this.initDate,
-      required this.endDate,
-      this.skills,
-      this.activities});
+  ExperienceModel({
+    required this.title,
+    required this.company,
+    required this.description,
+    required this.isCurrent,
+    required this.initDate,
+    required this.endDate,
+    this.skills,
+    this.activities,
+  });
 
   factory ExperienceModel.fromJson(Map<String, dynamic> json) {
     return ExperienceModel(
-        title: json['title'],
-        company: json['company'],
-        description: json['description'],
-        isCurrent: json['isCurrent'],
-        initDate: DateTime.parse(json['initDate']),
-        endDate: DateTime.parse(json['endDate']),
-        skills: json['skills'].map<ExperienceSkillModel>((e) {
-          return ExperienceSkillModel.fromJson(e);
-        }).toList(),
-        activities: json['activities'].map<ExperienceActivitiesModel>((e) {
-          return ExperienceActivitiesModel.fromJson(e);
-        }).toList());
+      title: json['title'],
+      company: json['company'],
+      description: json['description'],
+      isCurrent: json['isCurrent'],
+      initDate: DateTime.parse(json['initDate']),
+      endDate: DateTime.parse(json['endDate']),
+      skills: json['skills'].map<ExperienceSkillModel>((e) {
+        return ExperienceSkillModel.fromJson(e);
+      }).toList(),
+      activities: json['activities'].map<ExperienceActivitiesModel>((e) {
+        return ExperienceActivitiesModel.fromJson(e);
+      }).toList(),
+    );
   }
 }
 
@@ -44,7 +46,9 @@ class ExperienceSkillModel {
 
   factory ExperienceSkillModel.fromJson(Map<String, dynamic> json) {
     return ExperienceSkillModel(
-        title: json['title'], svgUrl: json['svgUrl'] ?? '');
+      title: json['title'],
+      svgUrl: json['svgUrl'] ?? '',
+    );
   }
 }
 

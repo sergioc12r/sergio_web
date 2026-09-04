@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:sergio_web/legal/ui/project_privacy_policy_page.dart';
 import 'package:sergio_web/about_me/ui/about_me_form_view_model.dart';
 import 'package:sergio_web/education/view_model/education_form_view_model.dart';
 import 'package:sergio_web/experience/ui/experience_form_view_model.dart';
+import 'package:sergio_web/projects/model/project_model.dart';
+import 'package:sergio_web/projects/ui/projects_form.dart';
+import 'package:sergio_web/projects/ui/projects_form_view_model.dart';
 import 'package:sergio_web/tech_stack/ui/tech_stack_form_view_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:sergio_web/about_me/model/about_me_model.dart';
@@ -32,19 +37,18 @@ import 'package:sergio_web/tech_stack/ui/tech_stack_form.dart';
 /// The three widths every section has to survive: small phone, tablet,
 /// desktop. Overflows throw in tests, so simply pumping at each width is the
 /// layout check — no golden files needed.
-const List<({String name, Size size})> _viewports = <({
-  String name,
-  Size size,
-})>[
-  (name: '375dp phone', size: Size(375, 900)),
-  (name: '768dp tablet', size: Size(768, 1200)),
-  (name: '1440dp desktop', size: Size(1440, 1200)),
-];
+const List<({String name, Size size})> _viewports =
+    <({String name, Size size})>[
+      (name: '375dp phone', size: Size(375, 900)),
+      (name: '768dp tablet', size: Size(768, 1200)),
+      (name: '1440dp desktop', size: Size(1440, 1200)),
+    ];
 
 final AboutMeModel _aboutMe = AboutMeModel(
   title: 'Sobre Mí',
   subTitle: 'Creo apps que son parte de tu día a día',
-  description: 'Ingeniero mecatrónico y desarrollador de software.\n\n'
+  description:
+      'Ingeniero mecatrónico y desarrollador de software.\n\n'
       'Más de 7 años en el sector, 6 de ellos en desarrollo móvil.',
   imageUrl: '',
   techItems: const <String>['Flutter', 'Dart', 'Firebase', 'Bloc'],
@@ -98,6 +102,35 @@ final List<ExperienceModel> _experience = <ExperienceModel>[
   ),
 ];
 
+final List<ProjectModel> _projects = <ProjectModel>[
+  const ProjectModel(
+    title: 'SITP Smart',
+    slug: 'sitp-smart',
+    description:
+        'Aplicación para visualizar los datos del sistema de transporte de Transmilenio.',
+    tags: <String>['Flutter', 'Dart', 'Riverpod', 'Transporte público'],
+  ),
+  const ProjectModel(
+    title: 'Fogon App',
+    slug: 'fogon-app',
+    description: 'Aplicación para crear, ver y guardar recetas.',
+    tags: <String>['Flutter', 'Dart', 'Riverpod', 'Recetas'],
+  ),
+  const ProjectModel(
+    title: 'Verdant',
+    slug: 'verdant',
+    description:
+        'Aplicación para llevar el control del cuidado de las plantas.',
+    tags: <String>[
+      'Flutter',
+      'Dart',
+      'Riverpod',
+      'Tablet',
+      'Cuidado de plantas',
+    ],
+  ),
+];
+
 final List<Education> _education = <Education>[
   Education(
     title: 'Ingeniería Mecatrónica',
@@ -133,6 +166,7 @@ Future<void> _pumpSection(
         techStackProvider.overrideWith((ref) => _StubTechStack()),
         experienceProvider.overrideWith((ref) => _StubExperience()),
         educationProvider.overrideWith((ref) => _StubEducation()),
+        projectsProvider.overrideWith((ref) => _StubProjects()),
       ],
       child: MaterialApp(
         theme: CUThemeData.lightTheme,
@@ -146,10 +180,7 @@ Future<void> _pumpSection(
         supportedLocales: AppLocalizations.supportedLocales,
         home: Scaffold(
           body: SingleChildScrollView(
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: child,
-            ),
+            child: Padding(padding: const EdgeInsets.all(20), child: child),
           ),
         ),
       ),
@@ -184,11 +215,18 @@ class _StubEducation extends EducationFormViewModel {
   }
 }
 
+class _StubProjects extends ProjectsFormViewModel {
+  _StubProjects() {
+    state = _projects;
+  }
+}
+
 /// Nav labels, in the order [CUAppBar] receives them.
 const List<String> _navLabels = <String>[
   'Inicio',
   'Sobre Mi',
   'Stack Tecnológico',
+  'Proyectos',
   'Experiencia',
   'Educación',
   'Contacto',
@@ -246,31 +284,69 @@ Future<void> _pumpNav(
   await tester.pumpAndSettle();
 }
 
+/// Mounts [ProjectPrivacyPolicyPage] for [slug] behind a real `GoRouter`,
+/// the way it is actually reached in the app (a direct URL, not an in-app
+/// push), with [projectsProvider] pinned to the fixture data.
+Future<void> _pumpPrivacyPolicy(
+  WidgetTester tester, {
+  required String slug,
+}) async {
+  tester.view.physicalSize = const Size(1024, 900);
+  tester.view.devicePixelRatio = 1.0;
+  addTearDown(tester.view.reset);
+
+  final GoRouter router = GoRouter(
+    initialLocation: '/projects/$slug/privacy-policy',
+    routes: <RouteBase>[
+      GoRoute(
+        path: '/projects/:slug/privacy-policy',
+        builder: (context, state) =>
+            ProjectPrivacyPolicyPage(slug: state.pathParameters['slug']!),
+      ),
+    ],
+  );
+
+  await tester.pumpWidget(
+    ProviderScope(
+      overrides: [projectsProvider.overrideWith((ref) => _StubProjects())],
+      child: MaterialApp.router(
+        theme: CUThemeData.lightTheme,
+        locale: const Locale('es'),
+        localizationsDelegates: const <LocalizationsDelegate<Object>>[
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        supportedLocales: AppLocalizations.supportedLocales,
+        routerConfig: router,
+      ),
+    ),
+  );
+  await tester.pumpAndSettle();
+}
+
 void main() {
   final Map<String, Widget> sections = <String, Widget>{
     'hero': ProfileForm(scrollToContact: () {}),
     'about me': const AboutMeForm(index: '01'),
     'tech stack': const TextStackForm(index: '02'),
-    'experience': const ExperienceForm(index: '03'),
-    'education': const EducationForm(index: '04'),
-    'contact': const ContactMeForm(index: '05'),
+    'projects': const ProjectsForm(index: '03'),
+    'experience': const ExperienceForm(index: '04'),
+    'education': const EducationForm(index: '05'),
+    'contact': const ContactMeForm(index: '06'),
     'footer': const Footer(),
   };
 
   for (final MapEntry<String, Widget> section in sections.entries) {
     for (final ({String name, Size size}) viewport in _viewports) {
-      testWidgets(
-        '${section.key} lays out at ${viewport.name}',
-        (WidgetTester tester) async {
-          await _pumpSection(
-            tester,
-            child: section.value,
-            size: viewport.size,
-          );
+      testWidgets('${section.key} lays out at ${viewport.name}', (
+        WidgetTester tester,
+      ) async {
+        await _pumpSection(tester, child: section.value, size: viewport.size);
 
-          expect(tester.takeException(), isNull);
-        },
-      );
+        expect(tester.takeException(), isNull);
+      });
     }
   }
 
@@ -299,9 +375,7 @@ void main() {
     expect(find.text('Retrato'), findsOneWidget);
   });
 
-  testWidgets('timeline row stacks its date on compact widths', (
-    tester,
-  ) async {
+  testWidgets('timeline row stacks its date on compact widths', (tester) async {
     await _pumpSection(
       tester,
       child: const CUTimelineRow(
@@ -316,14 +390,10 @@ void main() {
     expect(find.text('ACTUAL'), findsOneWidget);
   });
 
-
-
-  /// The nav is the one layout that has to fit six Spanish section names and
-  /// the wordmark on a single line. If it ever stops fitting, this overflows
-  /// and fails rather than silently clipping.
-  testWidgets('nav fits all six links at 1024dp', (
-    tester,
-  ) async {
+  /// The nav is the one layout that has to fit seven Spanish section names
+  /// and the wordmark on a single line. If it ever stops fitting, this
+  /// overflows and fails rather than silently clipping.
+  testWidgets('nav fits all seven links at 1024dp', (tester) async {
     final List<String> tapped = <String>[];
 
     await _pumpNav(
@@ -360,6 +430,24 @@ void main() {
     for (final String label in _navLabels) {
       expect(find.text(label), findsOneWidget);
     }
+  });
+
+  testWidgets('privacy policy page renders the matched project', (
+    tester,
+  ) async {
+    await _pumpPrivacyPolicy(tester, slug: 'verdant');
+
+    expect(tester.takeException(), isNull);
+    expect(find.textContaining('Verdant'), findsWidgets);
+  });
+
+  testWidgets('privacy policy page shows not-found for an unknown slug', (
+    tester,
+  ) async {
+    await _pumpPrivacyPolicy(tester, slug: 'does-not-exist');
+
+    expect(tester.takeException(), isNull);
+    expect(find.text('No se encontró el proyecto solicitado.'), findsOneWidget);
   });
 
   test('uncategorised stack entries fall back instead of disappearing', () {

@@ -43,10 +43,7 @@ class AboutMeForm extends ConsumerWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Text(
-              data.subTitle,
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
+            Text(data.subTitle, style: Theme.of(context).textTheme.titleLarge),
             const SizedBox(height: CUSpacing.s20),
             Text(
               data.description,
@@ -139,7 +136,10 @@ class _StatsRow extends StatelessWidget {
     final List<List<RelevantItemModel>> rows = <List<RelevantItemModel>>[];
     for (int i = 0; i < items.length; i += columns) {
       rows.add(
-        items.sublist(i, i + columns > items.length ? items.length : i + columns),
+        items.sublist(
+          i,
+          i + columns > items.length ? items.length : i + columns,
+        ),
       );
     }
 

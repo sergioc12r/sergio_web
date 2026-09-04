@@ -1,0 +1,39 @@
+{
+  "_disabled_data": [
+    {
+      "title": "SITP Smart",
+      "slug": "sitp-smart",
+      "description": "Aplicación para visualizar los datos del sistema de transporte de Transmilenio.",
+      "tags": ["Flutter", "Dart", "Riverpod", "Transporte público"]
+    },
+    {
+      "title": "Fogon App",
+      "slug": "fogon-app",
+      "description": "Aplicación para crear, ver y guardar recetas.",
+      "tags": ["Flutter", "Dart", "Riverpod", "Recetas"]
+    }
+  ],
+  "data": [
+    {
+      "title": "Verdant",
+      "slug": "verdant",
+      "description": "Aplicación para llevar el control del cuidado de las plantas.",
+      "tags": ["Flutter", "Dart", "Riverpod", "Tablet", "Cuidado de plantas"],
+      "imageAssetPath": "assets/projects/verdant/icon.png",
+      "legalLinks": [
+        {
+          "label": "Términos de servicio",
+          "path": "/verdantapp/terms-of-service"
+        },
+        {
+          "label": "Política de privacidad",
+          "path": "/verdantapp/privacy-policy"
+        },
+        {
+          "label": "EULA",
+          "path": "/verdantapp/eula"
+        }
+      ]
+    }
+  ]
+}

@@ -49,9 +49,7 @@ class HeaderInfo extends StatelessWidget {
         const SizedBox(height: CUSpacing.s20),
         Text(
           strings.location.toUpperCase(),
-          style: CUTextStyles.monoMeta.copyWith(
-            color: colors.onSurfaceVariant,
-          ),
+          style: CUTextStyles.monoMeta.copyWith(color: colors.onSurfaceVariant),
         ),
         const SizedBox(height: CUSpacing.s16),
         CUTextLink(

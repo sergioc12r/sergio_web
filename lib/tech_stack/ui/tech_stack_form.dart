@@ -62,7 +62,11 @@ class TextStackForm extends ConsumerWidget {
                     ? Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          for (int i = 0; i < categories.length; i++) ...<Widget>[
+                          for (
+                            int i = 0;
+                            i < categories.length;
+                            i++
+                          ) ...<Widget>[
                             if (i > 0) Divider(color: colors.outline),
                             _StackColumn(
                               category: categories[i],

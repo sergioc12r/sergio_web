@@ -41,4 +41,16 @@ class DataResources {
       return _enAboutMe;
     }
   }
+
+  /// Projects data
+  static const String _enProjects = "assets/items/en/projects.json";
+  static const String _esProjects = "assets/items/es/projects.json";
+
+  static String getProjects({String locale = '_esCode'}) {
+    if (locale.toUpperCase().contains(_esCode)) {
+      return _esProjects;
+    } else {
+      return _enProjects;
+    }
+  }
 }

@@ -38,9 +38,7 @@ class ExperienceForm extends ConsumerWidget {
             company: item.company,
             description: item.description,
             isCurrent: item.isCurrent,
-            initDate: item.initDate.toLocalizedDate(
-              locale: strings.localeName,
-            ),
+            initDate: item.initDate.toLocalizedDate(locale: strings.localeName),
             endDate: item.endDate.toLocalizedDate(locale: strings.localeName),
             skills: item.skills,
             activities: item.activities,

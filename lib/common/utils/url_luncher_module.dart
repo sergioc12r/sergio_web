@@ -11,10 +11,7 @@ class UrlLauncherModule {
         throw Exception('Could not launch $url');
       }
 
-      await launchUrl(
-        uri,
-        mode: LaunchMode.externalApplication,
-      );
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
       return;
     }
 
@@ -27,11 +24,7 @@ class UrlLauncherModule {
       launchMode = LaunchMode.platformDefault;
     }
 
-    await launchUrl(
-      uri,
-      mode: launchMode,
-      webOnlyWindowName: '_blank',
-    );
+    await launchUrl(uri, mode: launchMode, webOnlyWindowName: '_blank');
   }
 
   static Future<void> launchEmail(String url) async {
@@ -52,8 +45,10 @@ class UrlLauncherModule {
 
   static String? encodeQueryParameters(Map<String, String> params) {
     return params.entries
-        .map((e) =>
-            '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}')
+        .map(
+          (e) =>
+              '${Uri.encodeComponent(e.key)}=${Uri.encodeComponent(e.value)}',
+        )
         .join('&');
   }
 }

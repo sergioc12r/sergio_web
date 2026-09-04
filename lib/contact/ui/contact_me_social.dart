@@ -39,7 +39,8 @@ class ContactMeSocial extends StatelessWidget {
           ),
         ),
         const SizedBox(height: CUSpacing.s8),
-        for (final ({String label, String url}) network in _networks) ...<Widget>[
+        for (final ({String label, String url}) network
+            in _networks) ...<Widget>[
           CUTextLink(
             label: network.label,
             style: CUTextStyles.monoTag,

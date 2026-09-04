@@ -8,13 +8,14 @@ class AboutMeModel {
   final List<String> techItems;
   final List<RelevantItemModel> relevantItems;
 
-  const AboutMeModel(
-      {required this.title,
-      required this.subTitle,
-      required this.description,
-      required this.imageUrl,
-      required this.techItems,
-      required this.relevantItems});
+  const AboutMeModel({
+    required this.title,
+    required this.subTitle,
+    required this.description,
+    required this.imageUrl,
+    required this.techItems,
+    required this.relevantItems,
+  });
 
   factory AboutMeModel.fromJson(Map<String, dynamic> json) {
     List<RelevantItemModel> relevantItems = [];
@@ -29,12 +30,13 @@ class AboutMeModel {
     }
 
     return AboutMeModel(
-        title: json['title'],
-        subTitle: json["sub_title"],
-        description: json["description"],
-        imageUrl: json["image"] ?? '',
-        techItems: techItems,
-        relevantItems: relevantItems);
+      title: json['title'],
+      subTitle: json["sub_title"],
+      description: json["description"],
+      imageUrl: json["image"] ?? '',
+      techItems: techItems,
+      relevantItems: relevantItems,
+    );
   }
 }
 
@@ -43,13 +45,17 @@ class RelevantItemModel {
   final String subTitle;
   final String iconUrl;
 
-  const RelevantItemModel(
-      {required this.title, required this.subTitle, required this.iconUrl});
+  const RelevantItemModel({
+    required this.title,
+    required this.subTitle,
+    required this.iconUrl,
+  });
 
   factory RelevantItemModel.fromJson(Map<String, dynamic> json) {
     return RelevantItemModel(
-        title: json['title'],
-        subTitle: json["sub_title"],
-        iconUrl: json["icon_url"]);
+      title: json['title'],
+      subTitle: json["sub_title"],
+      iconUrl: json["icon_url"],
+    );
   }
 }
