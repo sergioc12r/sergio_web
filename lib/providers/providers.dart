@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:sergio_web/about_me/model/about_me_model.dart';
 import 'package:sergio_web/about_me/ui/about_me_form_view_model.dart';
 import 'package:sergio_web/education/models/education.dart';
@@ -8,6 +9,8 @@ import 'package:sergio_web/education/view_model/education_form_view_model.dart';
 import 'package:sergio_web/experience/model/experience_model.dart';
 import 'package:sergio_web/experience/ui/experience_form_view_model.dart';
 import 'package:sergio_web/firebase_options.dart';
+import 'package:sergio_web/projects/model/project_model.dart';
+import 'package:sergio_web/projects/ui/projects_form_view_model.dart';
 import 'package:sergio_web/tech_stack/model/tech_stack_model.dart';
 import 'package:sergio_web/tech_stack/ui/tech_stack_form_view_model.dart';
 
@@ -18,6 +21,8 @@ part '../experience/provider/experience_provider.dart';
 part '../tech_stack/provider/tech_stack_provider.dart';
 
 part '../about_me/provider/about_me_provider.dart';
+
+part '../projects/provider/projects_provider.dart';
 
 final appConfigProvider = StateNotifierProvider<AppConfigNotifier, bool>((ref) {
   return AppConfigNotifier(ref);
@@ -45,12 +50,14 @@ class AppConfigNotifier extends StateNotifier<bool> {
     final expNotifier = ref.read(experienceProvider.notifier);
     final techStackNotifier = ref.read(techStackProvider.notifier);
     final aboutMeNotifier = ref.read(aboutMeProvider.notifier);
+    final projectsNotifier = ref.read(projectsProvider.notifier);
 
     final List<Future<void>> futures = [
       edNotifier.loadEducationData(currentLocale),
       expNotifier.loadExperienceData(currentLocale),
       techStackNotifier.loadExperienceData(currentLocale),
       aboutMeNotifier.loadAboutMeData(currentLocale),
+      projectsNotifier.loadProjectsData(currentLocale),
     ];
 
     await Future.wait(futures);

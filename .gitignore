@@ -9,6 +9,10 @@
 # Firebase configuration (Sensitive information)
 lib/firebase_options.dart
 
+# Generated localization files (flutter gen-l10n)
+lib/l10n/app_localizations.dart
+lib/l10n/app_localizations_*.dart
+
 # Android specific files
 .gradle/
 /android/local.properties
@@ -31,6 +35,11 @@ lib/firebase_options.dart
 .idea/
 *.iml
 *.iws
+
+# Claude Code local agent config and memory (personal, not project docs)
+.claude/agents/
+# Claude Code agent memory (local working notes, not project docs)
+.claude/agent-memory-local/
 
 # Others (OS generated and temporary files)
 .DS_Store

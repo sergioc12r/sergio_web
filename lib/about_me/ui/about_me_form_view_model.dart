@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/legacy.dart';
 import 'package:sergio_web/about_me/model/about_me_model.dart';
 import 'package:sergio_web/common/data/data_resourses.dart';
 
@@ -15,8 +15,9 @@ class AboutMeFormViewModel extends StateNotifier<AboutMeModel?> {
   }
 
   Future<AboutMeModel?> _loadData(Locale? locale) async {
-    final rawJsonData =
-        DataResources.getAboutMeData(locale: locale?.languageCode ?? 'es');
+    final rawJsonData = DataResources.getAboutMeData(
+      locale: locale?.languageCode ?? 'es',
+    );
     final jsonString = await rootBundle.loadString(rawJsonData);
     final decodedData = json.decode(jsonString);
 

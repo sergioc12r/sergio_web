@@ -8,7 +8,6 @@
   "email" : "sergio951112@gmail.com",
   "location" : "Bogotá - Colombia",
   "copy_clipboard_message" : "Copiado al portapapeles",
-  "send_message" : "Mensaje enviado exitosamente",
 
   "profile_experience_title" : "+6",
   "profile_experience_subtitle" : "Años de experiencia",
@@ -39,24 +38,46 @@
 
   "tech_stack_title" : "Stack Tecnológico",
 
+  "projects_title" : "Proyectos",
+  "simple_projects_title" : "Proyectos",
+
   "contact_title" : "¿Tienes un Proyecto?",
   "simple_contact_title" : "Contacto",
   "contact_sub_title" : "Estoy disponible para proyectos freelance y colaboraciones. ¡Hablemos!",
   "contact_info_title" : "Información de Contacto",
   "contact_info_email" : "Email",
   "contact_info_location" : "Ubicación",
-  "contact_form_title" : "Envíame un mensaje",
-  "contact_form_name_label" : "Nombre *",
-  "contact_form_name_place_holder" : "Tu nombre",
-  "contact_form_email_label" : "Email *",
-  "contact_form_email_place_holder" : "tu@email.com *",
-  "contact_form_subject_label" : "Asunto *",
-  "contact_form_subject_place_holder" : "¿En qué puedo ayudarte?",
-  "contact_form_subject_body_label" : "Mensaje *",
-  "contact_form_subject_body_place_holder" : "Cuéntame de tu proyecto ...",
-  "contact_form_send_button_label" : "Enviar Mensaje",
   "contact_social_title" : "Sigueme en redes: ",
-  "contact_validator" : "Campo requerido.",
-  "contact_email_validator" : "Ingrese un email válido.",
-  "contact_email_empty_validator" : "Email requerido."
+
+  "legal_privacy_policy_link" : "Política de privacidad",
+  "legal_back_link" : "← Volver al sitio",
+  "legal_project_not_found" : "No se encontró el proyecto solicitado.",
+  "legal_privacy_policy_eyebrow" : "Legal",
+  "legal_privacy_policy_title" : "Política de Privacidad",
+  "legal_last_updated" : "Última actualización: pendiente de publicación",
+
+  "legal_section_data_title" : "Información que recopilamos",
+  "legal_section_data_body" : "{title} puede recopilar cierta información para su funcionamiento. El detalle específico de qué datos se recolectan aún no ha sido documentado.",
+  "@legal_section_data_body" : {
+    "placeholders" : { "title" : { "type" : "String" } }
+  },
+  "legal_section_data_placeholder" : "[Completar: lista específica de datos que {title} recolecta — por ejemplo, ubicación, datos de cuenta, uso de la app.]",
+  "@legal_section_data_placeholder" : {
+    "placeholders" : { "title" : { "type" : "String" } }
+  },
+
+  "legal_section_use_title" : "Uso de la información",
+  "legal_section_use_body" : "La información recopilada se utiliza para operar y mejorar la aplicación.",
+  "legal_section_use_placeholder" : "[Completar: para qué se usa cada dato específicamente — funcionalidad, analítica, comunicación, etc.]",
+
+  "legal_section_storage_title" : "Almacenamiento y seguridad",
+  "legal_section_storage_body" : "Se toman medidas razonables para proteger la información almacenada.",
+  "legal_section_storage_placeholder" : "[Completar: dónde se almacenan los datos, por cuánto tiempo, y qué medidas de seguridad se aplican.]",
+
+  "legal_section_third_parties_title" : "Servicios de terceros",
+  "legal_section_third_parties_body" : "La aplicación puede utilizar servicios de terceros que recopilan información por su cuenta.",
+  "legal_section_third_parties_placeholder" : "[Completar: lista de SDKs/servicios de terceros usados — por ejemplo, Firebase Analytics, Firebase Crashlytics, mapas, etc.]",
+
+  "legal_section_contact_title" : "Contacto",
+  "legal_section_contact_body" : "Para preguntas sobre esta política de privacidad, podés escribir a:"
 }

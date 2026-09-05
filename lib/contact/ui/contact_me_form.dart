@@ -1,49 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:sergio_web/common/styles/cu_spacing.dart';
+import 'package:sergio_web/common/widgets/cu_section_header.dart';
 import 'package:sergio_web/contact/ui/contact_me_info.dart';
 import 'package:sergio_web/contact/ui/contact_me_social.dart';
-import 'package:sergio_web/contact/ui/send_me_message_form.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/l10n/app_localizations.dart';
 
+/// Section 05.
+///
+/// Just the ways to reach him — email, location, socials — as a single
+/// ruled reference list. No form.
 class ContactMeForm extends StatelessWidget {
-  const ContactMeForm({super.key});
+  const ContactMeForm({super.key, required this.index});
+
+  final String index;
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = Theme.of(context).textTheme;
     final strings = AppLocalizations.of(context)!;
 
-    return LayoutBuilder(builder: (context, constraints) {
-      final availableWidth = constraints.maxWidth;
-      const spacing = 15.0;
-      final itemWidth = (availableWidth - spacing * 3) / 2;
-      final finalWidth =
-          itemWidth < 300 ? availableWidth - 2 * spacing : itemWidth;
-
-      return Column(
-        spacing: 20,
-        children: [
-          Text(strings.contact_title, style: textStyle.headlineMedium),
-          Text(strings.contact_sub_title, style: textStyle.bodySmall),
-          Wrap(
-            spacing: spacing,
-            runSpacing: spacing,
-            direction: Axis.horizontal,
-            children: [
-              SizedBox(
-                width: finalWidth,
-                child: Column(
-                  spacing: 15,
-                  children: [
-                    ContactMeInfo(),
-                    ContactMeSocial(),
-                  ],
-                ),
-              ),
-              SizedBox(width: finalWidth, child: SendMeMessageForm()),
-            ],
-          ),
-        ],
-      );
-    });
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        CUSectionHeader(
+          index: index,
+          title: strings.contact_title,
+          subtitle: strings.contact_sub_title,
+        ),
+        const SizedBox(height: CUSpacing.s40),
+        const ContactMeInfo(),
+        const SizedBox(height: CUSpacing.s32),
+        const ContactMeSocial(),
+      ],
+    );
   }
 }

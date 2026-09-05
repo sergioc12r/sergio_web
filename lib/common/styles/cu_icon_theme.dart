@@ -1,14 +1,19 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:sergio_web/common/styles/cu_spacing.dart';
 import 'package:sergio_web/common/styles/theme_colors.dart';
 
+/// Iconography is nearly absent from this system by design. What is left
+/// (drawer handle, social marks) reads as muted ink, never as decoration.
 class CUIconTheme {
-  static IconThemeData lightIconTheme = IconThemeData(
-    color: CUThemeColors.backgroundDark,
-    size: 24
+  const CUIconTheme._();
+
+  static const IconThemeData lightIconTheme = IconThemeData(
+    color: CUThemeColors.lightTextMuted,
+    size: CUSizing.icon,
   );
 
-  static IconThemeData darkIconTheme = IconThemeData(
-    color: CUThemeColors.onPrimary,
-    size: 24
+  static const IconThemeData darkIconTheme = IconThemeData(
+    color: CUThemeColors.darkTextMuted,
+    size: CUSizing.icon,
   );
 }

@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:sergio_web/common/widgets/glass_card.dart';
+import 'package:sergio_web/common/styles/cu_spacing.dart';
+import 'package:sergio_web/common/styles/cu_text_styles.dart';
+import 'package:sergio_web/common/widgets/cu_timeline_row.dart';
 import 'package:sergio_web/experience/model/experience_model.dart';
 import 'package:sergio_web/experience/ui/item/experience_activity_widget.dart';
 import 'package:sergio_web/experience/ui/item/experience_skills_widget.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sergio_web/l10n/app_localizations.dart';
 
+/// One job.
+///
+/// The bullet-and-connector rail plus the glass card are gone; this is a row
+/// in a ruled list. `isLast` is no longer needed — with a top rule per entry
+/// there is no trailing line to suppress.
 class ExperienceItemWidget extends StatelessWidget {
-  const ExperienceItemWidget(
-      {super.key,
-      required this.title,
-      required this.description,
-      required this.company,
-      required this.initDate,
-      required this.endDate,
-      required this.isCurrent,
-      required this.isLast,
-      this.skills,
-      this.activities});
+  const ExperienceItemWidget({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.company,
+    required this.initDate,
+    required this.endDate,
+    required this.isCurrent,
+    this.skills,
+    this.activities,
+  });
 
   final String title;
   final String description;
@@ -24,107 +31,41 @@ class ExperienceItemWidget extends StatelessWidget {
   final String initDate;
   final String endDate;
   final bool isCurrent;
-  final bool isLast;
   final List<ExperienceSkillModel>? skills;
   final List<ExperienceActivitiesModel>? activities;
 
   @override
   Widget build(BuildContext context) {
-    final styles = Theme.of(context).textTheme;
+    final theme = Theme.of(context);
+    final colors = theme.colorScheme;
     final strings = AppLocalizations.of(context)!;
-    return LayoutBuilder(builder: (context, constraints) {
-      return IntrinsicHeight(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Row(
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 10.0, right: 10.0),
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 5.0),
-                          child: Container(
-                            width: 20.0,
-                            height: 20.0,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              border: Border.all(
-                                color: Colors.blue,
-                                width: 4.0,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          flex: 1,
-                          child: Container(
-                            width: 2, // Ancho de la línea
-                            color: isLast
-                                ? Colors.transparent
-                                : Colors.grey.shade300, // Color de la línea
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  flex: 8,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: 10,
-                    children: [
-                      Text(
-                        '$initDate - ${isCurrent ? strings.experience_current : endDate}',
-                        style: styles.titleMedium,
-                      ),
-                      GlassCard(
-                        child: Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    spacing: 11,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Text(
-                                        title,
-                                        style: styles.headlineSmall,
-                                      ),
-                                      Text(company, style: styles.titleMedium),
-                                      Text(description,
-                                          style: styles.bodyMedium),
-                                      ExperienceActivityWidget(
-                                          activities: activities),
-                                      ExperienceSkillsWidget(skills: skills),
-                                    ],
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      const SizedBox(height: 10)
-                    ],
-                  ),
-                ),
-              ],
+
+    return CUTimelineRow(
+      /// An open-ended range reads as ongoing on its own; the accent badge
+      /// below says so in words, so the end of the range stays blank rather
+      /// than repeating the label twice.
+      date: isCurrent ? '$initDate —' : '$initDate — $endDate',
+      badge: isCurrent ? strings.experience_current : null,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+          Text(title, style: theme.textTheme.titleLarge),
+          const SizedBox(height: CUSpacing.s4),
+          Text(
+            company.toUpperCase(),
+            style: CUTextStyles.monoLabel.copyWith(
+              color: colors.onSurfaceVariant,
             ),
           ),
-        ),
-      );
-    });
+          const SizedBox(height: CUSpacing.s16),
+          Text(description, style: theme.textTheme.bodyMedium),
+          const SizedBox(height: CUSpacing.s16),
+          ExperienceActivityWidget(activities: activities),
+          const SizedBox(height: CUSpacing.s12),
+          ExperienceSkillsWidget(skills: skills),
+        ],
+      ),
+    );
   }
 }
